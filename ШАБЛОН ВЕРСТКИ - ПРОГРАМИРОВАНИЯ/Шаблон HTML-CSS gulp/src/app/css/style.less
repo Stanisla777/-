@@ -1,0 +1,218 @@
+@import url("fonts.css");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  margin: 0;
+  font-family: 'OpenSans', sans-serif;
+  color: #101010;
+  cursor: default;
+  font-size: 16px;
+  line-height: normal;
+  background: #fff;
+  height: auto;
+  min-height: 100%;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+section,header,footer{
+  display: block;
+  position: relative;
+}
+
+.container {
+  zoom: 1;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+
+a{
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a img {
+  text-decoration: none;
+}
+
+a:focus,a:hover,a:link,
+a:active {
+  outline: none!important;
+  text-decoration: none!important;
+  outline-width: 0;
+}
+a:hover{
+  text-decoration: none!important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+button {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+}
+button:focus{
+  outline: none;
+}
+
+
+input{
+  position: relative;
+  display: block;
+  font-size: 15px;
+  color: #000;
+  padding-left: 15px;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+  /*height: 51px;*/
+  outline: none;
+}
+
+input:-moz-placeholder { color: #b7bfd2; }
+input::-webkit-input-placeholder { color: #b7bfd2;}
+
+textarea{/*Стили для поля ввода*/
+  padding-left: 15px;
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+  outline: none;
+}
+textarea:-moz-placeholder { color: #a2a5b2; }
+textarea::-webkit-input-placeholder { color: #a2a5b2; }
+input:focus, textarea:focus{
+  outline: none;
+}
+
+
+
+/*--------------МОДАЛЬНЫЕ ОКНА МЕДИА-МЕНЮ НА ВЕСЬ ЭКРАН-----------------*/
+/*Модальное окно*/
+.parent {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*display: flex;*/
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+  z-index: 1100;
+  display: none;
+}
+.parent #block {
+  position: relative;
+  width: 80%;
+  height: 50%;
+  border: 1px solid #7b7a7a;
+  background: #fff;
+  box-shadow: 0 0 4px 0 #7b7a7a;
+}
+img {
+  display: block;
+  border: none;
+}
+#lean_overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.close-menu {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -10px;
+  top: -10px;
+  font-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img3/IconClose.png");
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/*Моя сетка*/
+@margin5:5px;
+@margin10:10px;
+@margin15:15px;
+@margin20:20px;
+@margin25:25px;
+@margin30:30px;
+
+.row-2-col{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -@margin5;
+  margin-right:-@margin5;
+}
+
+.row-2-col__col {
+  position: relative;
+  width: calc(100%/2 - @margin5*2);
+  margin-left: @margin5;
+  margin-right: @margin5;
+  margin-bottom: 2*@margin5;
+}
+
+
+
+@media screen and (max-width: 930px) {
+  .row-2-col__col {
+    width: calc(100%/1 - 30px);
+  }
+}
+
+
+
+
+
+
+
+

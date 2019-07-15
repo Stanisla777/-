@@ -1,0 +1,113 @@
+/*!
+ * Title: Boutique carousel (jQuery plugin)
+ * Author: Berend de Jong, Frique
+ * Author URI: http://frique.me/
+ * Version: 1.5.4 (2015-08-14 22:45)
+ */
+
+/*
+ * FUNCTIONALITY
+ * The following block serves to make Boutique function properly. Don't edit or edit carefully.
+ */
+
+.boutique{ margin:0; padding:0; position:relative; z-index:1; }
+.boutique-frame{ margin:0; padding:0; list-style:none; position:absolute; z-index:1; display:none; border-width:0; }
+.boutique-frame-image{ border:0; vertical-align:bottom; }
+.boutique-frame-title{ cursor:default; }
+.boutique-frame-text{ display:block; position:absolute; left:0; right:0; bottom:0; text-align:left; cursor:default; margin:0; }
+.boutique-frame-link, .boutique-frame-link:hover{ display:block; cursor:default; text-decoration:none; outline:none; }
+.boutique-frame-image, .boutique-frame, .boutique-frame-link{ -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -o-user-select:none; user-select:none; -webkit-user-drag:none; -moz-user-drag:none; user-drag:none; }
+.boutique.rtl .boutique-frame-title, .boutique.rtl .boutique-frame-text{ text-align:right; }
+
+/*
+ * THEMING
+ * Edit this section to style the frames, text, alignments etc.
+ * If the id of your Boutique instance is different, do a find/replace on #boutique.
+ * To overwrite these for a second instance on the same page, copy and prepend the classes with the #id of the other instance, like so: #boutique2 .boutique-frame{}
+ */
+#content{/*И фотки раздвинуться/ Изначально этого не было */
+    width: 1050px;
+
+
+}
+#boutique,
+.boutique{
+    display: none; /* Start invisible until the plugin is loaded */
+    margin: 0 auto;
+}
+
+/* The frames *//*Рамочки вокруг фоток тута*/
+.boutique-frame{
+    background: #eee3db /* Color of the frame behind and around the image */
+    border: 0px solid; /* Outer border around frame */
+    border-color: #f5eee9 #d0c2b6 #d0c2b6 #f5eee9;
+}
+
+/* Headers of all frames */
+.boutique-frame-title{
+    margin: 0;
+    line-height: 1.3;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #222;
+}
+
+/* Text area of all frames */
+/* Note that this is the complete text layer, including the title header inside */
+.boutique-frame-text{
+    font-family: Verdana, sans-serif;
+    line-height: 1.2;
+    color: #444;
+    background: #eee3db;
+    margin: 0;
+    padding: 10px 15px 14px;
+}
+
+/* The most frontal item (frame 3) */
+.boutique .front .boutique-frame-image{
+    margin: 0px; /* Determines the gap between image and frame border */
+}
+.boutique .front .boutique-frame-title{
+    font-size: 28px; /* Front frame title header *//*ТО что сейчас*/
+}
+.boutique .front .boutique-frame-text{
+    font-size: 14px; /* Front frame description text */
+}
+
+/* The further back items (frame 2 and 4) */
+.boutique .behind .boutique-frame-image{ /* Determines the gap between image and frame border */
+    margin: 10px;/*фотки можно двигать тута*/
+}
+.boutique .behind .boutique-frame-title{ /* Behind frame title headers */
+    font-size: 18px;/*То чтоо будет после пролистывания*/
+}
+.boutique .behind .boutique-frame-text{ /* Behind frame description text */
+    font-size: 10px;/*То что будет после пролистывания*/
+}
+
+/* The furthest back items (frame 1 and 5) */
+.boutique .back .boutique-frame-image{ /* Determines the gap between image and frame border */
+    margin: 50px;/*фотки можно двигать тута*/
+}
+.boutique .back .boutique-frame-title{ /* Back frames title headers */
+    font-size: 11px;
+}
+.boutique .back .boutique-frame-text{ /* Back frame description text */
+    font-size: 6px;
+}
+/*А тут я просто баловался*/
+.fofo1{
+    position: relative;
+}
+.fofo3{
+    position: relative;
+    left: 0px;
+}
+.fofo4{
+    position: relative;
+    left: 0px;
+}
+.fofo4{
+    position: relative;
+
+}

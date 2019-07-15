@@ -1,0 +1,164 @@
+    <head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+    <title></title>
+
+
+<link rel="stylesheet" type="text/css" href="main.css">   
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> самая последняя версия
+<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script> работает toggle
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script> одна из последних
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> нужен для адаптивной верстки(например чтобы корректно открывалось на маленьких экранах)
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 400px)" href="mediar.css"> медиа запрос
+
+
+
+<style>
+*{
+     padding: 0; margin: 0;
+     } 
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;	
+    font-size: 13px;
+    line-height: normal;
+}
+
+.main{
+    position: relative;
+    min-height: 100%;	
+    width: 100%;
+    height: 412px;/*высота страницы, а то карту не видно будет, потом убрать*/	
+    /*background: url("images/karta3.jpg")center 0%/*нжун 0 а может и нет*/ no-repeat;*/  /*Это карта с фотошопа*/
+    
+}
+
+
+.blokmain{
+    position: relative;
+    width: 100%;
+    opacity: 0.4;/*Это чтобы было видно карту, потом убрать*/
+}
+.blok{
+    position: relative;
+    margin: 0 auto;
+    max-width: 960px;
+    box-sizing: border-box;
+    border-left: 1px solid black;    /*потом убрать*/
+    border-right: 1px solid black;   /*потом убрать*/
+}
+
+
+h1, h2, h3, h4{
+    font-weight: normal;
+}
+
+
+img{			/*чтобы картинка была адаптивной*/
+    max-width: 100%;
+    height: auto;
+}
+<div class="blok3-line"><img  src="images/razgrankrasnii.png" alt="Линия"/></div>
+.blok3-line{
+    width: 309px;
+    margin: 34px auto;
+}
+
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.blok1main{
+    background-color: #770100;
+}
+.blok1{
+    height: 82px;/*высоту блока в дальнейшем убрать, а используя padding-bottom и довести до размеров*/
+}
+
+
+Картинки:
+<div class="..."><img  src="images/razgrankrasnii.png" alt="Линия"/></div>
+....{
+    width: 309px;
+    margin: 34px auto;
+} Оборачиваем в div, чтоьы центрировать
+
+
+Для текстов:
+
+.zagalovok{
+    margin: 0px auto;
+    text-align: center;
+    width: 800px;
+    font-size: 36px;
+    color: #790100;
+    font-weight: 500;
+}
+.prosto-text{
+    max-width: 200px;
+    height:20px /*Если текст переносится нижние блоки не сдвигаются */
+    border-bottom: 1px dashed #ffffff;
+    text-align: center;
+    font-family: open sans, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #ffffff;
+
+}
+
+Для мобильников:
+.blok1main{
+    position: relative;
+    width: 100%;
+    background-color: #d8dff4;
+    background: url("images/fon1bloka.jpg")center no-repeat;
+    background-size: 320px 444px; /*Уменьшаю фоновый рисунок*/
+    background-position: top;
+    opacity: 0.4;
+}
+
+				медиа запрос
+
+@media screen and (max-width: 970px){     
+    #blokside{
+        font-size:14px ;
+    }
+}
+
+@media screen and (max-width: 490px){
+    #blok13{height: 1360px;max-width: 520px;overflow-x: hidden;overflow-y: hidden}
+    #blok13text{font-size: 19px}
+}
+ 
+
+    </style>	
+</head>
+
+ <body>
+<script src="scripts.js"></script>
+
+$(document).ready(function() {
+});
+
+</body>
+</html>
+
+<meta charset="UTF-8" /> для PHP

@@ -1,0 +1,67 @@
+
+Поп апы можно сделать многим способами. Три примера.
+
+1. С помощью бутстрапа. Как делать модальные окна лежит в папке Шаблоны 4.
+2. На сайте, который прислал Ваня http://jquerymodal.com/
+3. Способ, котроый разработал я сам.
+
+
+Окна с поп апами пишем в самом конце после закрывающегося тэга обычно main.
+
+<div class="pop-up pop-up__politika">
+    <div class=""><img  src="images/krestik.png" alt="Крестик закрытия"/></div>
+    <h1 class="pop-up_politika_zagolovok">Политика конфиденциальности</h1>
+</div>
+
+Для всех поп апов задаются общий класс pop-up
+
+Далее задаем стили,. В таблице стилей мы прописываем стили для класса фона затемнения, который мы будем вызывать через скрипт
+
+.fonzatemnenie{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.pop-up{
+    display: none;
+    position: fixed;
+    left: 50%;
+    z-index: 11;
+}
+.pop-up__zakazat-zvonok{
+    margin-left: -231px;
+    top: 120px;
+    width: 462px;
+    height: 364px;
+    background-color: #750100;
+}
+
+В скрипте мы пишем следующее:
+//Поп ап Политика конфиденциальности
+    $('.button').on("click",function(e){
+        $(".main").prepend('<div class="fonzatemnenie1"></div>');
+        $('.pop-up__politika').css('display','block');
+        e.preventDefault();
+    });
+    $('.politika__close').on("click",function(){
+        $(".fonzatemnenie1").remove();
+        $('.pop-up__politika').css('display','none');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

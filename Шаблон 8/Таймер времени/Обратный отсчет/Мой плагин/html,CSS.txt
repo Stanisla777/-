@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Обратный отсчет</h1>
+
+    <div class="countdown" id="CDT"></div>
+
+    <div class="countdown" id="PDT"></div>
+
+</div>
+
+/*Стили*/
+
+.countdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*.number-wrapper{*/
+    /*margin-right: 20px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+
+/*}*/
+/*.number-wrapper:last-child{*/
+    /*margin-right: 0;*/
+/*}*/
+
+.number{
+    font-size: 30px;
+}
+.line{
+    margin: 0 20px;
+}

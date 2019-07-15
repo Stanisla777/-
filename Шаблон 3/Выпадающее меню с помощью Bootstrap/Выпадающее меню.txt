@@ -1,0 +1,31 @@
+На этом сайте есть различные реализации меню с помощью Bootstrap:
+http://itchief.ru/lessons/bootstrap-3/98-bootstrap-3-dropdown-lists#samples 
+
+Здесь в качестве примера приведу реализацию одного из них.
+Скачивается библиотека Bootstrap с сайта http://getbootstrap.com/customize/?id=33a7d0da31b0d213f53df04f7d3f2537. Файлы размещаюися в корневой папке сайта
+Подключается в html. 
+    <script type="text/javascript"src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main2.css"/>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+Подключается одна из последних библиотек jquery
+
+       <div class="item dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                Ссылка с выпадающим меню
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Пункт 1</a></li>
+                <li><a href="#">Пункт 2</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Пункт 3</a></li>
+            </ul>
+        </div>
+
+В стилях мы немножко подредактируем стили Bootstrap. Например сейчас у нас выпадающий список расположен горизонтально.
+.dropdown ul li{
+    display: block!important;
+}
+Урок по Bootstrap: выпадающие меню и списки находится на сайте http://dedushka.org/uroki/8169.html, там описано что задаёт тот или инной класс. Например <b class="caret"></b> делает стрелочку вниз

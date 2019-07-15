@@ -1,0 +1,9 @@
+$(document).ready(function() {
+ var freqSecs2 = 0.7;
+ setInterval (blink, freqSecs2*1000 );
+
+ function blink() {
+  var inout2 = (freqSecs2*30000)/1;
+  $("#block-new43, #block-new52, #block-new48").fadeIn(inout2).fadeOut(inout2);
+ }
+});

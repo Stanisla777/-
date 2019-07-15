@@ -1,0 +1,6 @@
+(function(){
+  var glowInterval = 1000
+  setInterval(function(){
+    $('.glowable').toggleClass('glow')
+  }, glowInterval)
+})()

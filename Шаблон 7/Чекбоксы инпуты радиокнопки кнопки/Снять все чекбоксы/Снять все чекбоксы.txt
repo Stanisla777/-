@@ -1,0 +1,5 @@
+/*Снять все чекбоксы по нажатию на клафишу*/
+
+    $(".js-pull-off-checbox").on("click",function () {
+            $(this).parents(".header").siblings(".main-content-brand").find(".list-filters input").prop('checked', false);
+    });

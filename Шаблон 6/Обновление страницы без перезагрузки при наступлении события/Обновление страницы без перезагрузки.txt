@@ -1,0 +1,17 @@
+$('.form-new-project-add').on('click',function(){
+
+    mode();
+
+})
+
+
+
+
+function mode() {
+        $.ajax({
+            url: 'diagramm-2.php',
+            success: function(data) {
+                $('body').html(data)
+            }
+        });
+    }

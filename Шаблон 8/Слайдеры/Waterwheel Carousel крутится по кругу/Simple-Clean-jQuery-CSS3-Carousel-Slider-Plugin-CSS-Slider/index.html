@@ -1,0 +1,317 @@
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>jQuery CSS Slider</title>
+
+
+<meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" />
+<meta name="keywords" />
+<meta name="author" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="MobileOptimized" content="width" />
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cssslider.js"></script>
+	
+
+		<!-- Campaign specific CSS & JS -->
+
+<link type="text/css" rel="stylesheet" href="css/animated-slider.css" />
+
+<!--[if lte IE 8]>
+    <link type="text/css" rel="stylesheet" href="css/ie8_fix.css" />
+<![endif]-->
+
+<style type="text/css">
+
+html {
+  font-size: 100%; }
+
+body {
+  color: #222222;
+  font-family: Helvetica, Arial, sans-serif; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.3333em; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+h1 {
+      color: #222222;
+      font-size: 2.61792em;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em; 
+  }
+    .choose_slider {
+        height: 350px;
+        position: relative;
+    }
+
+    .subhead {
+        margin-top: 0px;
+        font-weight: 10;
+        color: #404040;
+    }
+
+    h2 {
+        color: #808080;
+    }
+
+    .main-title {
+        margin-bottom: 2px;
+    }
+
+    code {        
+        background-color: #F9F9F9;
+        border: 1px dashed #2F6FAB;
+
+        color: black;
+        line-height: 1.45em;
+        padding: 1em;
+        white-space: pre-wrap;
+        display: block;
+
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .main-container {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    span.note {
+        padding-left: 30px;
+        font-size: 10px;
+    }
+</style>
+
+</head>
+
+
+<body>
+
+    <div class="main-container">
+        <div class="outer_pad">
+            <h1 class="main-title">jQuery CSS Slider</h1>
+            <h4 class="subhead">by David Wallin</h4>
+
+            <h3>What is it?</h3>
+            <p>A simple jQuery carousel or slider that leverages CSS transitions instead of javascript animations. You can change the animation by simply changing the CSS styles for the previous and next classes.</p>
+
+            <h2>3 across example</h2>
+                <div class="choose_slider">
+
+                    <div class="choose_slider_items">
+                        <ul id="mySlider1">
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div><a id="btn_next1" href="#">Next</a></div>
+                <div><a id="btn_prev1" href="#">Previous</a></div>
+
+
+                <h2>5 across example</h2>
+                <div class="choose_slider">
+
+                    <div class="choose_slider_items">
+                        <ul id="mySlider2">
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+                            <li class="current_item">
+                                <a href="#">
+                                    <img src="images/Placeholder.png" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div><a id="btn_next2" href="#">Next</a></div>
+                <div><a id="btn_prev2" href="#">Previous</a></div>
+
+            <br/>
+            <span>Events: <span id="statusText"></span></span>
+
+
+             <div><h3>Usage</h3>
+                <code>$("myULList").AnimatedSlider( { } );</code>
+             <em>Note: Behavior may be undefined if you have less than 3 items.</em>
+             
+             
+<code>options = {
+    infiniteScroll: true,
+    visibleItems: 3,        // 3 or 5. if 5, next_item_2 and previous_item_2 will be used.
+    changedCallback: function(animatedSliderObject, currentItem),       // called every time the slide changes
+    willChangeCallback: function(animatedSliderObject, currentItem),    // called before the change transition
+    userChangedCallback: function(animatedSliderObject, currentItem),   // called after the transition
+};
+
+// Note: all parameters are optional
+</code>
+
+            </div>
+
+            <div>
+                <p>CSS Classes Needed:   (see <a href="css/animated-slider.css">animated-slider.css</a>)</p>
+                <ul>
+                    <li>previous_hidden</li>
+                    <li>next_hidden</li>
+                    <li>previous_item  </li>
+                    <li>next_item </li>
+                    <li>previous_item_2 <span class="note">* Only used with 5 across</span></li>
+                    <li>next_item2 <span class="note">* Only used with 5 across</span></li>
+                    <li>current_item</li>
+                </ul>
+
+                <p>Also, the LI needs to have css transitions set up.</p>
+            </div>
+
+            <div>
+                <p>You can get access to the AnimatedSlider object by:</p>
+
+                <code>var slider = $("myULList").data("AnimatedSlider");</code>
+
+                <h3>Methods</h3>
+
+
+                    <code>slider.setItem(n);</code>
+                    <p>Jump to the specified index<p>
+                    <code>slider.prevItem();</code>
+                    <p>Go to the previous item<p>
+                    <code>slider.nextItem();</code>
+                    <p>Go to the next item<p>
+                    <code>slider.refresh();</code>
+                    <p>Refresh the presentation (basically just sets the classes again) in case something changed.<p>
+
+                <h3>Variables</h3>
+                <ul>
+                    <li><em>numSliderItems</em> - the number of items in the slider</li>
+                    <li><em>currentItem</em> - the current index</li>
+                </ul>
+            </div>
+
+            <h3>License</h3>
+            <p>Available under the MIT license.</p>
+
+            </div>
+
+            </div>
+
+
+    <script>
+        $(function() {
+            $("#mySlider1").AnimatedSlider( { prevButton: "#btn_prev1", 
+                                             nextButton: "#btn_next1",
+                                             visibleItems: 3,
+                                             infiniteScroll: true,
+                                             willChangeCallback: function(obj, item) { $("#statusText").text("Will change to " + item); },
+                                             changedCallback: function(obj, item) { $("#statusText").text("Changed to " + item); }
+                                          });
+
+
+            $("#mySlider2").AnimatedSlider( { prevButton: "#btn_prev2", 
+                                             nextButton: "#btn_next2",
+                                             visibleItems: 5,
+                                             infiniteScroll: true,
+                                             willChangeCallback: function(obj, item) { $("#statusText").text("Will change to " + item); },
+                                             changedCallback: function(obj, item) { $("#statusText").text("Changed to " + item); }
+                                          });
+        });
+    </script>
+
+    </body>
+</html>

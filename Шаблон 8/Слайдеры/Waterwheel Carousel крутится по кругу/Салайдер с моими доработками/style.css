@@ -1,0 +1,75 @@
+
+
+
+ul#mySlider1{/*Задаем ширину всему блоку, чтобы он был по середине и адаптивным*/
+    width: 79%;
+    position: relative;
+    margin: 0 auto;
+}
+#mySlider1 li {/*Задаем ширину и другие св-ва отдельному слайдеру*/
+    padding-top: 70px;
+    padding-bottom: 105px;
+    text-align: center;
+    border: 1px solid;
+    width: 100%;
+    background: #fff;
+}
+#mySlider1 li>div{ /*Ширина контейнера с содержимым, чтобы не задавать padding*/
+    width: 80%;
+    margin: 0 auto;
+}
+#mySlider1 li:not(.current_item)>div{/*чтобы содержание неактивных слайдеров не было видно*/
+    opacity: 0;
+}
+
+
+.your-name{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #256dc2;
+    margin-top: 30px;
+}
+.wrapper-stars{
+    max-width: 140px;
+    display: flex;
+    margin: 30px auto;
+}
+
+/*Кнопки*/
+.slider-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #246fc3;
+}
+#btn_next1{
+    left: 0;
+}
+#btn_prev1{
+    right: 0;
+}
+
+.arrow-btn{
+    width: 25px;
+    height: 21px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.btn_next1{
+    background-image: url("../img/Arrow-prev.png");
+}
+.btn_prev1{
+    background-image: url("../img/Arrow-next.png");
+}
+
+
+

@@ -1,0 +1,36 @@
+
+<div class="detailed-card__wrapper-quantity">
+    <p>Quantity</p>
+    <div class="detailed-card__number-purchases wrapper-number-purchases">
+        <div class="wrapper-number-purchases__count">2</div>
+        <div class="wrapper-number-purchases__sign wrapper-number-purchases__minus">
+            <i class="fa fa-minus" aria-hidden="true"></i>
+        </div>
+        <div class="wrapper-number-purchases__sign wrapper-number-purchases__plus">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+
+
+
+//js
+
+var i=2;
+$('.wrapper-number-purchases__plus').on('click',function () {
+    i+=1;
+    $('.wrapper-number-purchases__count').text(i)
+});
+
+
+
+
+$('.wrapper-number-purchases__minus').on('click',function () {
+    if(i!==0){
+        i-=1;
+        $('.wrapper-number-purchases__count').text(i)
+    }
+
+
+});

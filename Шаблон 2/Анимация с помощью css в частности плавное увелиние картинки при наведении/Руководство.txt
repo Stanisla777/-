@@ -1,0 +1,36 @@
+здесь анимация тех или иных объктов делаем только с помощью css, так как показал опыт jquery делает некоторую анимацию с рывками. Например при увеличении фотографии с помощью animate происходить всё будет рывками. Таблица стилей делает эти эффекты плавно.
+
+Например нам нужно сделать плавное увеличение фотографии при наведении на неё.
+
+html:
+<div id="blok7kartinka2"><img src="images/blok7kartinka2.jpg" width="831"> </div>
+
+Блоку придаём следующие стили:
+#blok7kartinka1{
+    position: absolute;
+    left: -83.4%;
+    top: 0px;
+    overflow: hidden;
+    width: 1009px;
+    height: 376px;
+}
+Обязательно ставим правило overflow:hidden; Оно нужно для того, чтобы наше изображение не выходило за рамки блока при увеличении.
+
+Теперь задаём правило для самого изображения:
+#blok7kartinka1 img{
+    -webkit-transition: all 5s ease-out
+    -moz-transition: all 5s ease-out;
+    -o-transition: all 5s ease-out;
+}
+
+transition - Универсальное свойство, которое позволяет одновременно задать значения transition-property, transition-duration, transition-timing-function и transition-delay. Устанавливает эффект перехода между двумя состояниями элемента, они могут быть определены с помощью псевдоэлемента :hover или :active, а также динамически через JavaScript.http://htmlbook.ru/css/transition
+
+#blok7kartinka1 img:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+transform -Трансформирует элемент, в частности, позволяет его масштабировать, вращать, сдвигать, наклонять, а также комбинировать виды трансформаций.http://htmlbook.ru/css/transform
+
+Оригинал странички: http://beloweb.ru/novichkam/plavnoe-uvelichenie-izobrazheniya-pri-navedenii-na-chistom-css3.html

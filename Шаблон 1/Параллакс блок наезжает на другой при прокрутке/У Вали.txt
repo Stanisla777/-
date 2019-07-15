@@ -1,0 +1,114 @@
+<script>
+            var sectionsConstr = {};
+            jq_144(function ($) {
+                sectionsConstr.cfg0 = {
+                    0:{
+                        sectionId: '#block-new2',
+                        elements: '#block-new165'
+                    }
+                };
+                sectionsConstr.cfg1 = {
+                    0:{
+                        sectionId: '#block-new3',
+                        elements: '#block-new31, #block-new32, #block-new33'
+                    },
+                    1:{
+                        sectionId: '#block-new4',
+                        elements: '#block-new34, #block-new35, #block-new36'
+                    },
+                    2:{
+                        sectionId: '#block-new5',
+                        elements: '#block-new37, #block-new38, #block-new39, #block-new40'
+                    },
+                    3:{
+                        sectionId: '#block-new6',
+                        elements: '#block-new41, #block-new42, #block-new43'
+                    }
+                     
+                };
+                function ConstractSection( cfg ) {
+                    var $ = jq_144;
+                    var that = this;
+                    that.sectionId = cfg.sectionId;
+                    that.$section = $(that.sectionId);
+                    var elements = cfg.elements;
+                    
+                    that.$section.append('<div class="inner"></div>');
+                    var $inner = that.$section.find('.inner');
+
+                    that.width = that.$section.width();
+                    that.height = that.$section.height();
+
+                    that.topDif = parseInt( that.$section.css('top') );
+                    that.leftDif = /*parseInt( that.$section.css('left') )*/0;
+
+                    //that.$section.css({ zIndex: '2' });
+                    $(elements).each(function (index, element) {
+                        var $element = $(element);
+                        if ( this.style.width == '100%' ) {
+                            that.$section.append(
+                                $element.css({
+                                    top: (parseInt($element.css('top')) - that.topDif) + 'px',
+                                    left: (parseInt($element.css('left')) - that.leftDif) + 'px'
+                                })
+                            );
+                        }
+                        else {
+                            $inner.append(
+                                $element.css({
+                                    top: (parseInt($element.css('top')) - that.topDif) + 'px',
+                                    left: (parseInt($element.css('left')) - that.leftDif) + 'px'
+                                })
+                            );
+                        }
+                    });
+
+                }
+                sectionsConstr.checkAndSetPos = function () {
+                    var s0 = sectionsConstr.sections0, l0 = s0.length;
+                    for ( var i = 0; i < l0 ; i += 1 ) {
+                        if ( ( $(window).scrollTop() > s0[i].topDif ) && ( s0[i].$section.css('position') == 'absolute' ) ) {
+                            s0[i].$section.css({ position: 'fixed', top: '0' });
+                        }
+                        if ( ( $(window).scrollTop() < s0[i].topDif ) && ( s0[i].$section.css('position') == 'fixed' ) ) {
+                            s0[i].$section.css({ position: 'absolute', top: s0[i].topDif });
+                        }
+                    }
+                    var s1 = sectionsConstr.sections1, l1 = s1.length;
+                    for ( var i = 0; i < l1 ; i += 1 ) {
+                        if ( ( $(window).scrollTop() > ( s1[i].topDif - 0 ) ) && ( s1[i].$section.css('position') == 'absolute' ) ) {
+                            s1[i].$section.css({ position: 'fixed', top: '0px' });
+                        }
+                        if ( ( $(window).scrollTop() < ( s1[i].topDif - 0 ) ) && ( s1[i].$section.css('position') == 'fixed' ) ) {
+                            s1[i].$section.css({ position: 'absolute', top: s1[i].topDif });
+                        }
+                    }
+                };
+                
+                sectionsConstr.sections0 = [];
+                for (var key in sectionsConstr.cfg0) {
+                    sectionsConstr.sections0[key] = new ConstractSection( sectionsConstr.cfg0[key] );
+                    sectionsConstr.sections0[key].$section.css({ zIndex: ( key + 1 ) });
+                }
+                sectionsConstr.sections1 = [];
+                for (var key in sectionsConstr.cfg1) {
+                    sectionsConstr.sections1[key] = new ConstractSection( sectionsConstr.cfg1[key] );
+                    sectionsConstr.sections1[key].$section.css({ zIndex: ( key + 2 ) });
+                }
+
+                sectionsConstr.checkAndSetPos();
+                $(window).scroll(function() {
+                    sectionsConstr.checkAndSetPos();
+                });
+                $(window).resize(function() {
+                    sectionsConstr.checkAndSetPos();
+                });
+            });
+        </script>
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+<script>jq_181 = jQuery.noConflict(true);</script>
+Страничка:http://lpgenerator.ru/var/1002186/preview/ Конференция в Израиле

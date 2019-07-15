@@ -1,0 +1,27 @@
+В корневую папку сайта копируем папку font-awesome-4.6.3
+Подключаем  в html файл с иконками.
+Заходим на сайт http://fontawesome.ru/all-icons/
+Выбираем иконку и копируем тэг с ней.
+Управлять размерами иконки можно подключив класс. Для размеров есть разные классы, но чтобы не парится достаточно подключить один клас и в уже ему менять размер.
+
+<link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css"/>
+<i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>
+
+Различные действия, которые можно делать с помощью иконок: крутить, верететь, менять цвет
+https://webref.ru/layout/font-awesome/icon
+
+Подставить иконки в стили
+http://www.zawebis.com/html-i-css/ispolzovanie-ikonok-font-awesome-v-css-kode.html
+
+Только вместо 
+.some-class{
+	// ваши стили
+	content: "\f2b4";
+	font-family: FontAwesome;
+}
+
+.some-class:before{
+	// ваши стили
+	content: "\f2b4";
+	font-family: FontAwesome;
+}

@@ -1,0 +1,63 @@
+
+.countbox          /*Размер блока, Цвет, шрифт размер цифарак*/
+{
+	color: #2f2f2f;
+	font-family: MyriadProRegular,Helvetica,sans-serif;
+	font-size: 69px;
+	height: 106px;
+	line-height: 82px;/*Можно регулировать расположение по высоте*/
+	margin: 0 auto;
+	padding: 0;
+	width: 324px;
+}
+/*Цифры счетчиков. При не обходимости категории минуту часу секунды можно убирать, а также регулировать расстояние между цифрами*/
+.countbox-hours1{
+    position: relative;
+    display: block;
+    left: 9px;
+}
+.countbox-hours2{
+    position: relative;
+    display: block;
+    left: -6px;
+}
+
+.countbox-mins1{
+    position: relative;
+    display: block;
+    left: 41px;
+}
+.countbox-mins2{
+    position: relative;
+    display: block;
+    left: 27px;
+}
+.countbox-secs1{
+    display: none;
+}
+.countbox-secs2{
+    display: none;
+}
+.countbox .countbox-num
+{
+	float: left;
+}
+.countbox .countbox-space/*Это разделитель между цифрами. Также можно регулировать расстояние между категориямиДля разделителей нужна картинка, которую можно вставить backgroud*/
+{
+	float: left;
+	height: 90px;
+	width: 8px;
+}
+.countbox-hours1,.countbox-mins1,.countbox-secs1,.countbox-hours2,.countbox-mins2,.countbox-secs2
+{
+	background-image: url('../images/flip.png');
+	background-repeat: no-repeat;
+	float: left;
+	height: 89px;
+	margin: 0 -4px 0 0;/*Можно регулировать общую ширину и растянутость таймера,а также регулироавать расположение цифр по высоте*/
+	text-align: center;
+	width: 55px;/*Можно регулировать общую ширину и растянутость таймера*/
+	z-index: 1;
+}
+
+ /*Скрипт скачан с сайта mywpnote.ru */

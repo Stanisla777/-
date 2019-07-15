@@ -1,0 +1,14 @@
+$(".sc-searh-form__wrap input").keyup(function() {
+            var $value = $(this).val();
+            $(".sc-service").each(function(index) {
+                $row = $(this);
+                var town_name = $row.find(".sc-service__town").text();
+                // var animaL_eng_name = $row.find(".block-head__shortname").html();
+                var reg = new RegExp($value, "i");
+                if (town_name.match(reg)/*|| animaL_eng_name.match(reg)*/) {
+                    $row.fadeIn("slow");
+                } else {
+                    $row.fadeOut("slow");
+                }
+            });
+        });

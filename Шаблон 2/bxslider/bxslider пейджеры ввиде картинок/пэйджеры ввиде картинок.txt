@@ -1,0 +1,75 @@
+Иногда бывают такие слайдеры, когда нажимаешь не на стрелочки, а на определенные картинки или любые элементы и появляется нужный слайд. Я раньше долго мучался, когда вешал клики на картинки и появлялся необходимая картинка. Всё намного проще.
+Этот слайд находится по адресу:
+В html пишем 
+   <div class="slider">
+        <ul class="bxslider">
+            <li><img src="imagine/foto1.jpg" /></li>
+            <li><img src="imagine/foto2.jpg" /></li>
+            <li><img src="imagine/foto3.jpg" /></li>
+        </ul>
+
+        <div id="bx-pager">
+            <a data-slide-index="0" href=""><p class="knopka1"></p></a>
+            <a data-slide-index="1" href=""><p class="knopka2"></p></a>
+            <a data-slide-index="2" href=""><p class="knopka3"></p></a>
+        </div>
+    </div>
+
+Подключаем обычный слайдер:
+<script src="http://media.lpgenerator.ru/uploads/images/jquery.srasbxslider.min.js"></script>
+
+Вызываем:
+
+$('.bxslider').bxSlider({
+
+    pagerCustom: '#bx-pager',
+   
+    });
+
+Основные настройки на сайте:
+http://fot-tof.ru/Funkcional_nyj_slajder_bxSlider.htm
+
+
+В стилях помимо настройки слайдера копируем отсюда необходимые стили для пэйджера:
+
+<link href="http://bxslider.com/lib/jquery.bxslider.css" rel="stylesheet" />
+
+Самые простые стили:
+.slider{
+    position: relative;
+    width: 600px; /*можно управлять шириной слайдера*/
+    height: 530px;
+    margin:0 auto;
+    box-sizing: content-box;
+}
+#bx-pager{
+    position: relative;
+    top: 200px;
+}
+#bx-pager p{
+    width: 60px;
+    height: 40px;
+    border: 1px solid red;
+}
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+}
+#bx-pager a{
+    width: 60px;
+    color:#3c1602;
+    display: block;
+    text-decoration:none;
+}
+
+#bx-pager a.active{
+    background-color: #fcbb01;
+    color:#fff;
+}

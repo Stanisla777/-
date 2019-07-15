@@ -1,0 +1,21 @@
+https://vanzzo.net/jquery/touchswipe-plugin.html
+
+
+
+$(".custom-header").swipe({
+            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                cal.gotoNextMonth( updateMonthYear );
+                weight_height();
+                show_example();
+            }
+        });
+        $(".custom-header").swipe({
+            swipeRight:function(event, direction, distance, duration, fingerCount) {
+                cal.gotoPreviousMonth( updateMonthYear );
+                weight_height();
+                show_example();
+            }
+        });
+
+
+ѕерелистывание календар€, удобно на мобильных

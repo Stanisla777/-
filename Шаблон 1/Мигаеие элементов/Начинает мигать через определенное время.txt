@@ -1,0 +1,16 @@
+$(document).ready(function(){
+    $("#img_1").hide();
+
+  function dada(){
+
+function para (){
+    $("#img_1").fadeOut(2000).fadeIn(2000);
+
+};
+
+      setInterval(para, 2000);
+
+  };
+
+setTimeout(dada, 5000);
+});

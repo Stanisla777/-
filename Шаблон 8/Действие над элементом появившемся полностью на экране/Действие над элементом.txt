@@ -1,0 +1,48 @@
+Событие над элементом происходит, когда он полностью появляется на экране при скролинге страницы вниз
+
+$(document).on('scroll', function () {
+    $('.wrapper-about-us-advantage').each(function () {
+        var self = $(this);
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height) {
+            $(self).addClass('box');
+        }
+    });
+})
+
+Использовал, когда делал анимированное появление блоков при скроллинге
+
+А тут когда скрывается с экрана
+
+$(document).on('scroll', function () {
+    $('.wrapper-about-us-advantage').each(function () {
+        var self = $(this);
+        height = self.offset().top + self.height();
+        height_2 = self.height();
+        if ( $(window).scrollTop() >=$(self).offset().top+height_2||$(document).scrollTop() + windowHeight+height_2<= height)  {
+                    $(self).removeClass(anim_class)
+
+                }
+    });
+})
+
+А тут зациклино, когда элемент только появляется и исчезает с экрана
+
+
+
+$(document).on('scroll', function() {
+    $('.wrapper-about-us-advantage').each(function() {
+        var self = $(this);
+        height = self.offset().top + self.height();
+        height_2 = self.height();
+        if ($(document).scrollTop() + windowHeight >= height) {
+            $(self).addClass(that.anim_class);
+        }
+
+        if ( $(window).scrollTop() >=$(self).offset().top+height_2||$(document).scrollTop() + windowHeight+height_2<= height)  {
+            $(self).removeClass(anim_class)
+
+        }
+
+    });
+});

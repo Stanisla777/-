@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <title></title>
+</head>
+<style>
+    .main{
+        width: 100%;
+    }
+    #slider{
+        width: 400px;
+        margin: 40px auto;
+    }
+    .text{text-align: center;font-size: 34px}
+    #slider .thumb{position:absolute;}
+    #slider a{color:#FF9;}
+    #slider a:hover{color:#cc151e;}
+    /*#slider .thumb .bottom{position:absolute; top:202px; padding:15px; max-height:10px; min-height:10px; width:350px;
+    background: url(http://media.lpgenerator.ru/images/157195/strelkapravo_3ffkacx.png) repeat-x bottom;}*/
+</style>
+
+<body>
+
+<div about="main">
+    <div class="text">Пилоты Формулы 1</div>
+    <div id="slider">
+        <div class="thumb" style="display:none; background: url(http://ss.sport-express.ru/userfiles/materials/47/472145/medium.jpg) no-repeat center top; height:240px; width:380px;" id="1">
+           <!-- <div class="bottom">
+                <a href="">Надпись на картинке, или ссылка</a>
+            </div>-->
+        </div>
+
+        <div class="thumb" style="display:none; background: url(http://ss.sport-express.ru/userfiles/materials/47/475561/medium.jpg) no-repeat center top; height:240px; width:380px;" id="2">
+            <!-- <div class="bottom">
+                 <a href="">Подпись следующей картинки</a>
+             </div>-->
+        </div>
+
+        <div class="thumb" style="display:none; background: url(http://ss.sport-express.ru/userfiles/materials/47/475793/medium.jpg) no-repeat center top; height:240px; width:380px;" id="3">
+            <!--<div class="bottom">
+                <a href="">Это простой слайдер картинок</a>
+            </div>-->
+        </div>
+
+        <div class="thumb" style="display:none; background: url(http://ss.sport-express.ru/userfiles/materials/47/475466/medium.jpg) no-repeat center top; height:240px; width:380px;" id="4">
+            <!-- <div class="bottom">
+                 <a href="">Спасибо авторам сайта SiteAR.RU! </a>
+             </div>-->
+         </div>
+
+         <div class="thumb" style="display:none; background: url(http://ss.sport-express.ru/userfiles/materials/46/468650/medium.jpg) no-repeat center top; height:240px; width:380px;" id="5">
+             <!--<div class="bottom">
+                 <a href="">Последняя картинка в слайдере!</a>
+             </div>-->
+         </div>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+ </div>
+ <script>
+
+     function toggle(id)
+     {
+         var e = document.getElementById(id);
+         var dh = gh(id);
+         var elems = e.getElementsByTagName('*');
+         var flag;
+
+         if (e.style.display == "none")
+         {
+             if (flag != 0)
+             {
+                 flag = 0;
+                 for(var i=0; i<elems.length; i++){vhe(elems[i], "hidden");}
+
+                 e.style.height="1px";
+                 e.style.display = "block";
+                 for(var i=0;i<=100;i+=5)
+                 {
+                     (function()
+                     {
+                         var pos=i;
+                         setTimeout(function(){e.style.height = (pos/100)*dh+1+"px";},pos*5);
+                     }
+                     )();
+                 }
+                 setTimeout(function(){for(var i=0; i<elems.length; i++){elems[i].style.visibility="visible";}},500);
+                 return true;
+                 flag = 1;
+             }
+         }
+         else
+         {
+             if (flag != 0)
+             {
+                 flag = 0;
+                 var lh=dh-1+"px";
+
+                 for(var i=0; i<elems.length; i++){vhe(elems[i], "hidden");}
+
+                 for (var i=100;i>=0;i-=5)
+                 {
+                     (function()
+                     {
+                         var pos=i;
+                         setTimeout(function()
+                         {
+                             e.style.height = (pos/100)*dh+"px";
+                             if (pos<=0)
+                             {
+                                 e.style.display = "none";
+                                 e.style.height=lh;
+                             }
+                         },1000-(pos*5));
+                     }
+                     )();
+                 }
+                 return true;
+                 flag = 1;
+             }
+         }
+         return false;
+     }
+     function vhe(obj, vh){obj.style.visibility=vh;}
+     function gh(id)
+     {
+         var e = document.getElementById(id);
+         if(e.style.display == "none")
+         {
+             e.style.visibility = "hidden";
+             e.style.display = "block";
+             dh = e.clientHeight||e.offsetHeight+5; // Высота
+             e.style.display = "none";
+             e.style.visibility = "visible";
+         }
+         else
+         {
+             dh = e.clientHeight||e.offsetHeight+5; // Высота
+         }
+         return dh;
+     }
+     function slider(now, last)
+     {
+         var newnow;
+
+         if(now==1){newnow=2;}
+         if(now==2){newnow=3;}
+         if(now==3){newnow=4;}
+         if(now==4){newnow=5;}
+         if(now==5){newnow=1;}
+
+         if(last!=0){toggle(last);}
+
+         setTimeout(function(){toggle(now);},1000);
+
+         setTimeout(function(){slider(newnow, now);}, 6000);
+     }
+     window.onload = run_function;
+     function run_function()
+     {
+         slider('1', '0');
+     }
+
+ </script>
+ </body>
+ </html>

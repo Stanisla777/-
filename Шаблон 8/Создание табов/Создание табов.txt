@@ -1,0 +1,54 @@
+
+<div class="wrapper-special-offers">
+
+   <div class="wrapper-bar"><!--Контейнер с названиями вкладок на которые мы кликаем для открытия блоков с инфой-->
+      <div data-type = "tours" class="offers-bar active-bar">Tours</div>
+      <div data-type = "photos" class="offers-bar bar-right">Photos</div>
+   </div>
+
+   <div data-type = "tours" class="wrapper-special-offers-info tours "> <!--Контейнер с содержание-->
+      <p>Содержание 1</p>
+   </div>
+
+   <div data-type = "photos" class="wrapper-special-offers-info photo"> <!--Контейнер с содержание 2-->
+      <p>Содержание 2</p>
+   </div>
+
+</div>
+
+Стили
+
+.offers-bar{
+    font-family: 'ArialRoundedMtBold', sans-serif;/*неактивный*/
+    font-size: 22px;
+    color: #4b83a6;
+    display: inline-block;
+    margin-right: 5px;
+    width: 160px;
+    height: 45px;
+    background-color: #c2f2ed;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    text-align: center;
+    line-height: 45px;
+}
+
+
+
+.right-side-tab{/*неактивный*/
+    display: none;
+}
+.bar-active{/*активный*/
+    background-color: #5596be;
+    color: #fff;
+}
+
+JS
+
+$('.wrapper-bar div').on('click',function(){
+   var dat = $(this).attr('data-type');
+   $('.wrapper-special-offers-info[data-type='+dat+']').show();
+   $('.offers-bar[data-type='+dat+']').addClass('active-bar');
+   $('.wrapper-special-offers-info[data-type='+dat+']').siblings('.wrapper-special-offers-info').hide();
+   $('.offers-bar[data-type='+dat+']').siblings('.offers-bar').removeClass('active-bar');
+});

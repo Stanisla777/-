@@ -1,0 +1,69 @@
+Плагин есть в папке. Описание опций на сайте. Вызов плагина такой. Например стилизованная полоса всей страницы
+
+Сайт:
+https://pcvector.net/412-nicescroll-alternativa-polos-prokrutki.html
+
+function() {
+        $("html").niceScroll();
+    }
+
+
+
+
+Стилизация скроллбара.
+
+Стилизация скроллбара доступна через опции в самой функции
+
+$(".wrapper-continents").niceScroll({
+            cursorcolor: "#fff", //цвет ползунка
+            autohidemode: false,
+            cursorwidth: 12,  //ширина ползунка
+            cursorborderradius: 0, //радиус ползунка
+            background: "#a4a4a4", //цвет линии сролла
+          
+        });
+    }
+
+Бывает так, что у нас эта прокрутка используется в появляющихся поп апах. При закрытии поп апа полоса будет оставаться, поэтому плагин нужно разрущить. Но там не всё так просто. Как делаю я
+
+Создаю функцию
+function scroll(){
+    $('.pop-up-ab').scrollTop(0); //при вызове ползунок помещаю вверх
+    $(".pop-up-ab").getNiceScroll().show();// показываю скролл
+    $(".pop-up-ab").getNiceScroll().resize();//разрушаю скролл
+
+    $(".pop-up-ab").niceScroll({
+        cursorcolor: "#fff", //цвет ползунка       
+    });
+}
+Открываю модалку:
+$('.col-dish').on('click', function () {//Открываю модальное окно по клику
+    $('.parent-ab').css('display', 'block').addClass('parent-ab__active');
+    scroll();//вызываю функцию с красивым скролом
+});
+
+Закрываю модалку
+$('.close-menu').on('click', function () {//Закрываю модальное окно по клику на крестик
+    $('.parent-ab').css('display', 'none');
+    $(".pop-up-ab").getNiceScroll().hide();// прячу полосу прокрутки
+});
+
+
+ Чтобы как бы сбросить прокрутку используется конструкция:
+$("#mydiv").getNiceScroll().resize();
+
+
+
+
+Что-то можно прописать только через стили. Названия класса линии скролла задается через скрипт.
+
+div[id*="ascrail"]{  /*щирина линии скролла*/
+    width: 2px!important;
+}
+
+
+div[id*="ascrail"] div{ /*ползунок*/
+    right: -5px; /*сдвиг ползунка*/
+    background: url("../img/scrollbar.jpg")center no-repeat; /*фон ползунка*/
+    background-size: cover;
+}

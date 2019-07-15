@@ -1,0 +1,43 @@
+Саиое простое
+https://webkab.ru/skrytpokazat-element-po-kliku-jquery/
+
+		<div class="wrapper-rating flex-space-around mar-top-30">
+                    <div class="item-rating"></div>
+                    <div class="item-rating"></div>
+                    <div class="item-rating"></div>
+                    <div class="item-rating"></div>
+                    <div class="item-rating"></div>
+                </div>
+
+
+.item-rating{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/icon-star.png");
+    background-size: contain;
+    cursor: pointer;
+}
+.item-rating-fill{
+    background-image: url("../img/icon-star-fill.png");
+}
+
+$('.item-rating').on('click',  function() {
+        $(this).toggleClass('item-rating-fill');
+    });
+
+
+
+
+
+
+
+
+2 способ более сложная реализация
+if($(modal_select).is(":hidden")){
+                $(this).parents(".form-group").append(modal_select);
+            }
+            else{$(modal_select).remove();}
+
+Здесь логика следующая: если объект не существует на странице, то он должен добавитья в элемент, иначе удалить

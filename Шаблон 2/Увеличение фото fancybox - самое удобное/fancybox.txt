@@ -1,0 +1,45 @@
+ѕодключние плагина и стилей дл€ навигации:
+    <link rel="stylesheet" href="http://yandex.st/jquery/fancybox/2.1.4/jquery.fancybox.css"/>
+    <script src="http://yandex.st/jquery/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+
+¬ html:
+        <a  class="gallery" rel="group_1"  href="images/Schumacher2.jpg"><img src="images/Schumi2.jpg" /></a>
+        <a  class="gallery" rel="group_1"  href="images/Schumacher2.jpg"><img src="images/Schumi2.jpg" /></a>
+        <a  class="gallery" rel="group_1"  href="images/Shumaher3.jpg"><img src="images/Schumi3.jpg" /></a>
+  
+ ласс ставим дл€ всех естественно один, тех фоток, которые мы хотим чтобы участвовали в галлерее.
+href путь к большой фотографии
+
+≈сли необходимо выводить несколько изображений в одной галерее, надо в каждую ссылку добавить атрибут rel="group_1". ≈го значение может быть любым, но одинаковым дл€ всех элементов одной галереи. “аким образом можно создать на странице несколько фотогалерей, дава€ им разные имена в атрибуте rel, например, group_1, group_2 и т.д. 
+≈сли rel="group_1" сто€ть не будет фотки будут увеличиватьс€ без стрелочек, тоесть не будет слайдера больших фоток
+
+¬ызываетс€ плагин:
+
+$(".gallery").fancybox({
+
+        "openEffect":"fade",
+        "closeEffect ":"fade",
+        "nextEffect":"fade",
+        "prevEffect":"fade"
+});
+
+ƒоступные опции на сайте:
+http://webors.in.ua/fancybox-izmenyaemyie-parametryi-zapuska-skripta/
+
+—амые рвспространненые:
+padding : 15 рамка вокруг фотки
+mouseWheel : true перключение при помощи колесика мыши
+loop : true циклическа€ навигаци€
+playSpeed : 2000 скорость переключени€ в милисекундах
+arrows : true отображение стрелок
+
+
+openEffect                               elastic - плавный
+closeEffect   тип анимации перехода	 fade - исчезающий
+nextEffect 				 none			
+prevEffect
+
+
+
+#block-new108'
+

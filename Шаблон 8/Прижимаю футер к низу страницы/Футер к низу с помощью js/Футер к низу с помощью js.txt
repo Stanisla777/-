@@ -1,0 +1,15 @@
+Минус прижимать футер к низу с помощью js является то, что страничка будет пригать, почему должно быть понятно.  js срабатывает после того, как построится документю Поэтому использовать аккуратно, а так лучше прижимать css
+
+function footerToBottom() {
+        var browserHeight = $(window).height(),
+            footerOuterHeight = $('footer').outerHeight(true),
+            mainHeightMarginPaddingBorder = $('.wrap').outerHeight(true) - $('.wrap').height();
+        $('.wrap').css({
+            'min-height': browserHeight - footerOuterHeight - mainHeightMarginPaddingBorder
+        });
+    }
+    footerToBottom();
+    $(window).resize(function () {
+        footerToBottom();
+    });
+

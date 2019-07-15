@@ -1,0 +1,5 @@
+body {
+  height: auto !important; //Обязательно, если контента в main будет много
+  height: 100%;
+  min-height: 100%;
+}

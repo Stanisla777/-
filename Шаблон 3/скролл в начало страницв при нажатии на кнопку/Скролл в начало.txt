@@ -1,0 +1,45 @@
+Саму кнопку я расположил в блоке, который имеет ширину 100%
+
+<div id="scrollup"><img src="images/scrollup.png"></div>
+
+#scrollvverh{
+    position: fixed;
+    bottom: 20px;
+    right: 4%;
+    cursor: pointer;
+    visibility: hidden;
+    z-index: 77777;
+}
+
+$(window).scroll(function(){
+        if ( $(window).scrollTop()>= $($('#zagolovoklidformi')).offset().top-300) {
+            $("#scrollvverh").css({"visibility": "visible"});
+        }
+        if ( $(window).scrollTop() < $($('#zagolovoklidformi')).offset().top-300){
+            $("#scrollvverh").css({"visibility": "hidden"});
+        }
+    });
+    $('#scrollvverh').click(function(event){
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0}, 500);
+    });
+
+Тут сделано так, чтобы самой кнопочки не было на первом экране. Поэтому стоит условие.
+Верх страницы это scrollTop: 0
+
+
+Но вот самый последний и правильный метод, но предыдущий убирать не буду
+
+
+   jQuery(function(f){
+       var element = f('#scrollup');
+       f(window).scroll(function(){
+           element['fade'+ (f(this).scrollTop() > 200 ? 'In': 'Out')](500);           
+       });
+   });
+
+
+    $('#scrollup').click(function(event){
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0}, 500);
+    });

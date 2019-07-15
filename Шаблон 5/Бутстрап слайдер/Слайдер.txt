@@ -1,0 +1,6 @@
+https://itchief.ru/lessons/bootstrap-3/bootstrap-3-carousel
+
+отключить автоматическую прокрутку для компонента Bootstrap Carousel остаточно добавить атрибут data-interval="false":
+
+
+<div id="carousel-example-generic" class="carousel slide" data-interval="false">

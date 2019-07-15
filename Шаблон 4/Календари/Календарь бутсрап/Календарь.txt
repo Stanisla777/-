@@ -1,0 +1,4 @@
+http://itchief.ru/lessons/bootstrap-3/113-bootstrap-3-datetimepicker
+
+Примеры различных реализаций:
+http://eonasdan.github.io/bootstrap-datetimepicker/

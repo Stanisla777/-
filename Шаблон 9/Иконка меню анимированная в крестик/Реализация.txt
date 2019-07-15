@@ -1,0 +1,81 @@
+На сайте описано на hover
+
+https://htmler.ru/2018/03/09/ikonka-menyu-animirovannaya-v-krestik-na-css/
+
+С помощью js
+
+<div class='close-burger'></div>
+
+/*CSS*/
+
+.close-burger {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-bottom: 3px solid #fff;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.close-burger:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s;
+}
+.close-burger:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  content: "";
+  display: block;
+  height: 3px;
+  background: #fff;
+  transition: transform 0.5s, width 2s;
+}
+.close-cross:before {
+  content: "";
+  display: block;
+  width: 100%;
+  transform: rotate(45deg);
+  background: #fff;
+  top: 100%;
+  margin-top: -55%;
+  left: 0;
+  margin-left: 0%;
+}
+.close-cross:after {
+  content: "";
+  display: block;
+  width: 100%;
+  transform: rotate(-45deg);
+  background: #fff;
+  top: 100%;
+  margin-top: -55%;
+  left: 0;
+  margin-left: 0%;
+}
+
+js
+
+$('.close-burger').on('click',function () {
+
+    if($(this).hasClass('close-cross')){
+        $(this).css('border-bottom','3px solid #fff').removeClass('close-cross');
+    }
+    else {
+        $(this).css('border','0').addClass('close-cross');
+        
+    }
+
+});
+
+
+

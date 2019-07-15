@@ -1,0 +1,11 @@
+$('#ssilka').click(function() {
+        var $that = $(this);
+        $('#my_form').slideToggle(1000, function() {
+            if ($(this).is(':visible')) {
+                $that.text('Скрыть');
+            } else {
+                $that.text('Раскрыть');
+            }
+        });
+
+    });

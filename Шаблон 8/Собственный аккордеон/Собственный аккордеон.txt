@@ -1,0 +1,126 @@
+Я его написал, чтобы чожно было не использовать бутстраповский аккордеон и другие плагины.
+Представлены тири случая
+
+1). Когда у нас могут быть открыты любое кол-во карточек
+
+<div class="conteiner-accordion">
+
+    <div class="wprapper-cart">
+        <div class="header-cart">
+            <p>Заголовок, по кторому кликают, чтобы раскрыть содержание карточки</p>
+            <div class="icon icon-plus"></div> <!--Иконка развернуть-->
+        </div>
+        <div class="body-cart">
+            Открывающееся содержание
+            Открывающееся содержание
+            Открывающееся содержание
+            Открывающееся содержание
+        </div>
+    </div>
+
+    <div class="wprapper-cart">
+        <div class="header-cart">
+            <p>Заголовок, по кторому кликают, чтобы раскрыть содержание карточки</p>
+            <div class="icon icon-plus"></div>
+        </div>
+        <div class="body-cart">
+            Открывающееся содержание
+            Открывающееся содержание
+            Открывающееся содержание
+            Открывающееся содержание
+        </div>
+    </div>
+
+</div>
+
+/*Стили*/
+
+.conteiner-accordion{
+    margin-top: 50px;
+    color: #000;
+}
+.wprapper-cart{
+    width: 350px;
+    margin-bottom: 20px;
+}
+.header-cart,.body-cart{
+    padding: 10px;
+}
+
+.header-cart{
+    display: flex;
+    justify-content: space-around;
+    background-color: antiquewhite;
+}
+.body-cart{
+    display: none;
+    background-color: #acfbcf;
+
+}
+.icon {
+    height: 33px;
+    width: 33px;
+    background-color: #ff8cc1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.icon-plus:before{
+    content: "\f067";
+
+}
+.icon-minus:before{
+    content: "\f068";
+}
+
+
+
+/*скрипт javascript*/
+
+$('.header-cart').on('click',function(){
+    $(this).siblings('.body-cart').slideToggle(500,'swing')
+});
+
+
+2). Когда одна открывается, другая закрывается, если открыта
+
+$('.header-cart').on('click',function(){
+    $(this).siblings('.body-cart').slideToggle(500,'swing');
+    $(this).parents('.wprapper-cart').siblings('.wprapper-cart').find('.body-cart').slideUp(500,'swing')
+});
+
+
+2.а)Либо так:
+
+$('.header-cart').on('click',function(){
+    var per =$(this).siblings('.body-cart')
+    $(this).siblings('.body-cart').slideToggle(500,'swing');
+    $('.body-cart').not(per).slideUp(500,'swing')
+});
+
+
+
+
+
+3). Когда у нас меняется иконка при развертывание - свертывание
+
+$('.header-cart').on('click',function(){
+
+    if($(this).hasClass('active')){
+        $(this).find('.icon').removeClass('icon-minus').addClass('icon-plus');
+        $(this).removeClass('active')
+    }
+    else{
+        $(this).find('.icon').removeClass('icon-plus').addClass('icon-minus');
+        $(this).addClass('active')
+    }
+    $(this).siblings('.body-cart').slideToggle(500,'swing')
+
+});
+
+
+
+
+

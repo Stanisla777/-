@@ -1,0 +1,105 @@
+Прижатие с помомощью flexbox
+
+<body>
+
+    <div class="wrap">
+    
+        <section class="section">
+            <div class="wrapper">
+                <div class="container"></div>
+            </div>
+        </section>
+    
+        
+    
+        <footer>
+            <div class="wrapper">
+                <p>Это футер</p>
+            </div>
+        </footer>
+        
+    </div>
+</body>
+
+
+
+
+
+/*Прижимаю к подвалу*/
+
+/*1 способ*/
+
+html{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;/*Это чтобы body растянулось на 100%*/
+    min-height: 100%;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;/*Это чтобы wrap растянулось на 100%*/
+}
+section{
+    flex-grow: 1;/*Это чтобы section занял всё пустое пространство и прижал футер*/
+}
+footer{
+    padding-bottom: 50px;
+    background: azure;
+    color: #000;
+    font-size: 24px;
+    flex-grow: 0;
+}
+
+/*2 способб*/
+
+html{
+    min-height: 100%;
+}
+body{
+
+}
+.wrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+section{
+    flex-grow: 1;/*Это чтобы section занял всё пустое пространство и прижал футер*/
+}
+footer{
+    padding-bottom: 50px;
+    background: azure;
+    color: #000;
+    font-size: 24px;
+    flex-grow: 0;
+}
+
+/*3 способ*/
+/*Тут не нужен дополнительный контейнер, чтобы отделить контент от футера*/
+
+html{
+    min-height: 100%;
+}
+body{
+
+}
+.wrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+section{
+}
+footer{
+    padding-bottom: 50px;
+    background: azure;
+    color: #000;
+    font-size: 24px;
+    margin-top: auto;
+}

@@ -1,0 +1,153 @@
+Структура
+
+<div class="parent">
+    <div class="block">
+        <div class="close-menu">x</div>
+
+    </div>
+</div>
+<div id="lean_overlay"></div>
+
+Стили:
+.parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*display: flex;*/
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+    z-index: 1100;
+    display: none;
+}
+
+.parent .block {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    border: 1px solid red;
+    background: #fff;
+}
+img {
+    display: block;
+    border: none;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:1000;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background: rgba(0, 0, 0, 0.25);
+    display: none;
+}
+.close-menu{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+js
+
+$('.wrapper-tel').on('click',function(){//Открываю модально окно по клику
+
+    $('.parent').css('display','flex');
+    $('#lean_overlay').show();//фон затемнение
+});
+
+$('.close-menu').on('click',function(){//Закрываю модальное окно по клику на крестик
+    $('.parent').css('display','none');
+    $('#lean_overlay').hide();
+});
+
+
+$('.parent').on('click', function (e) {//Закрываю модальное окно по клику рабочей области
+    $('.parent').css('display', 'none');
+    $("#lean_overlay").hide();
+}).on('click', '.block', function (e) {//Запрещаю закрывать окно по клику на само молдальное окно
+    e.stopPropagation();
+
+});
+
+
+Когда окно повится можно добавить функцию запрета скроллинга страницы
+
+function OffScroll() {
+    var winScrollTop = $(window).scrollTop();
+    $(window).bind('scroll', function () {
+        $(window).scrollTop(winScrollTop);
+    });
+}
+
+
+//Активирую
+
+$('.button').on('click',function(){//Открываю модально окно по клику
+    OffScroll ()
+    
+     .....
+});
+
+//Деативирую
+$('.close-menu').on('click',function(){//Закрываю модальное окно по клику на крестик
+    $(window).unbind('scroll');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+Но!!! Модальное окно можно вызывать по другому, более универсально
+
+function open_modal(){
+    $('.parent').css('display','flex');
+    $('.block').addClass('block-modal-window-medium');
+    $('#lean_overlay').show();//фон затемнение
+}
+
+function close_modal(){
+    $('.parent').css('display','none');
+    $('#lean_overlay').hide();
+}
+
+$('h1').on('click',open_modal);
+
+$('.close-menu').on('click',close_modal);
+
+$('.parent').on('click', function (e) {//Закрываю модальное окно по клику рабочей области
+    $('.parent').css('display', 'none');
+    $("#lean_overlay").hide();
+}).on('click', '.block', function (e) {//Запрещаю закрывать окно по клику на само молдальное окно
+    e.stopPropagation();
+
+});
+
+
+С последней частью тоже можно будет подумать что сделать
+
+
+
+
+
+
+
+
+
+
+
+
+
+

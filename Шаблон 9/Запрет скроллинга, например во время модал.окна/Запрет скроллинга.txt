@@ -1,0 +1,22 @@
+Выполнена ввиде функции. Активируется во время например открытия модального окна
+
+function OffScroll() {
+    var winScrollTop = $(window).scrollTop();
+    $(window).bind('scroll', function () {
+        $(window).scrollTop(winScrollTop);
+    });
+}
+
+
+//Активирую
+
+$('.button').on('click',function(){//Открываю модально окно по клику
+    OffScroll ()
+    
+     .....
+});
+
+//Деативирую
+$('.close-menu').on('click',function(){//Закрываю модальное окно по клику на крестик
+    $(window).unbind('scroll');
+});

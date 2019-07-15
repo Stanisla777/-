@@ -1,0 +1,36 @@
+” нас например карточки товара. Ѕлоки должны падать при маленьком экране не по одному а по несколько. –азмещать их в блоках не вариант
+
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.item{
+    margin: 5px;
+    flex-basis: 250px;
+    min-height: 100px;
+    border: 1px solid;
+}
+
+
+@media screen and (max-width: 1170px){
+    .container{
+        width: 70%;
+    }
+}
+
+¬ чем смысл. ” нас 4 блока. ѕри сужении экрана, 4 блок падает вниз и у нас получаетс€ некрасива€ конструкци€ 3 - 1, а надо 2 - 2.
+ћы уменьшаем ширину блока - контейнера, чтобы падало 2 блока. „тобы блоки всегда были по середине контейнеру задать justify-content: center;
+
+ј медиа запрос уменьшает ширину главного контейнера, так, чтобы свалились два блока
+

@@ -1,0 +1,133 @@
+Блоки могут быть разные, стили могут быть разные. Но ниже приведем собственный плагин построения линий между двумя блоками.
+Причем эти блоки могут быть по тдельности и вложены в другие блоки.
+
+При чем тут два вариантаю Варианты,когда у нас раситываются высота блоков и уже относительно них строится линии и вариант, где высчитываются координаты блоков, по которых строются линии.
+
+<div class="wrapper-blocks">
+    <div class="block">
+        <p>Привет мир мой мир</p>
+        <p>Привет мир мой мир</p>
+        <p>Привет мир мой мир</p>
+    </div>
+
+    <div class="block">
+       <p>Привет мир мой мир</p>
+    </div>
+
+    <div class="block">
+        <p>Привет мир мой мир</p>
+        <p>Привет мир мой мир</p>
+    </div>
+</div>
+
+/*Стили*/
+
+.wrapper-blocks {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 300px;
+    max-width: 200px;
+}
+.block {
+    width: 100%;
+    background-color: red;
+    margin-top: 50px;
+}
+.wrapper-blocks p{
+    margin: 0;
+}
+.line {
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    width: 2px;
+    background-color: green;
+}
+
+//js 1 Вариант
+
+
+function Line(obj){
+    var that = this;
+    this.line = obj.line;
+    this.element = obj.elem;//передаем общий блок в котором элементы
+    this.height_element = obj.height_elem;//передаем блок, между которыми строится линия
+    this.method = function(){
+        var mas = [];//массив, в который собираю все блоки для построения линии
+        var height_elem;
+
+        $(this.element).each(function () {
+            mas.push(this);//помещаю в массив
+        });
+        for (var i = 0; i < mas.length; i++) {//циклом перебираю массив с блоками
+
+            height_elem = $(mas[i]).outerHeight();//вычисляю высоту элемента, от кторого идет линия
+
+            if (i == mas.length - 1) {//условие для того, чтобы не вычислять длину для последнего блока(разобраться!!!)
+                break;
+            }
+            else {
+                //вычисляю высоту промежутка между элементами, коор.высоты 1 - коор.высоты 2, но так как получится
+                //отрицательное число ставлю Math.abs и минус высота элемента
+                var e = (Math.abs(($(mas[i]).offset().top) - ($(mas[i + 1]).offset().top))) - height_elem;
+
+                $(mas[i]).not(':last-child').after('<div class="' + that.line + '"></div>').next("."+that.line).css({
+                'height': e
+            });
+
+//                        $(mas[i]).next('.line').css({'height': e, 'marginBottom': -e - 5});
+//                        console.log(e)
+            }
+        }
+    };
+    setTimeout(function(){
+        that.method()
+    },500)
+}
+
+//        Если у нас нет общего блока или от этого блока строится линия, то классы одинаковые
+new Line({
+    elem:'.block',
+    height_elem:'.block',
+    line:'line'
+});
+
+
+// 2 вариант
+
+
+function Line(obj){
+    var that = this;
+
+    this.line = obj.line;
+    this.element = obj.elem; //передаем общий блок в котором элементы
+    this.height_element = obj.height_elem;//передаем блок, между которыми строится линия
+    this.method = function(){
+
+        $(this.element).each(function () {
+
+            var height_element = $(this).outerHeight(); //высота элемента от которого идет линия
+            var height = $(this).outerHeight(true)  - height_element;//высота всего блока с учетом margin
+//                    $(this).next('.line').css({'height': height, 'marginBottom': -height - 5});//задаем высоту линии
+
+            $(this).not(':last-child').after('<div class="' + that.line + '"></div>').next("."+that.line).css({
+                'height': height
+            });
+        });
+    };
+    setTimeout(function () {
+        that.method();
+    }, 500);
+}
+
+new Line({
+    elem:'.block',
+    height_elem:'.block',
+    line:'line'
+});
+
+
+
+
+
+

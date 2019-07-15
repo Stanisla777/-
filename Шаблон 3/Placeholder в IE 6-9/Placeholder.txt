@@ -1,0 +1,17 @@
+Placeholder работает в интернет эксплорер только начиная с 10 версии. Поэтому для младших нужуен плагин jquery.
+
+Он у меня есть в папке и отдельным файлом и в хранилище.
+<script src="http://media.lpgenerator.ru/uploads/images/placeholder_for_IE.js"></script>
+
+Вызывается плагин:
+
+<script>
+    jQuery(function(){
+
+        jQuery('input[placeholder], textarea[placeholder]').placeholder();
+
+
+    });
+</script>
+
+Сразу стоит сказать этот плагин не только для IE, он отработает везде, где не будет placeholder. 

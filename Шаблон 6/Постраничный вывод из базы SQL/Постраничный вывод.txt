@@ -1,0 +1,58 @@
+http://expange.ru/e/%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4_(PHP)
+
+
+<?php
+// Количество новостей на странице
+$on_page = 5;
+
+// Получаем количество записей таблицы messages
+$res = $mysqli->query("SELECT COUNT(*) AS `message` FROM messages WHERE requestId=$id_request");
+$count_records = mysqli_fetch_assoc($res);
+$count_records = $count_records['message'];
+//                        
+
+// Получаем количество страниц
+// Делим количество записей на количество новостей на странице
+// и округляем в большую сторону
+$num_pages = ceil($count_records / $on_page);
+//                        
+
+// Текущая страница из GET-параметра page
+// Если параметр не определен, то текущая страница равна 1
+$current_page = isset($_GET['page']) ? (int)$_GET['page'] : $num_pages;//выведится последний блок из базы, если хотим с первого ставим :1
+//                        
+
+// Если текущая страница меньше единицы, то страница равна 1
+if ($current_page < 1)
+{
+    $current_page = 1;
+}
+// Если текущая страница больше общего количества страница, то
+// текущая страница равна количеству страниц
+elseif ($current_page > $num_pages)
+{
+    $current_page = $num_pages;
+}
+
+
+// Начать получение данных от числа (текущая страница - 1) * количество записей на странице
+$start_from = ($current_page - 1) * $on_page;
+
+$result = $mysqli->query("SELECT `id`, `date`, `text` FROM `news` ORDER BY `date` DESC LIMIT $start_from, $on_page");
+
+<?php
+// Вывод списка страниц
+echo '<p>';
+for ($page = 1; $page <= $num_pages; $page++)
+{
+    if ($page == $current_page)
+    {
+        echo '<strong>'.$page.'</strong> &nbsp;';
+    }
+    else
+    {
+        echo '<a href="application-forum.php?id='.$id_request.'&page='.$page.'">'.$page.'</a> &nbsp;';
+    }
+}
+echo '</p>';
+?>

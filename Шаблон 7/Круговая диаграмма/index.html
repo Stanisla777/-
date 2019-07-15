@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Скрипт Chart.js. Создание анимированных диаграмм</title>
+        <link rel="stylesheet" href="header.css" />
+        <script src='Chart.min.js'></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </head>
+    <body>
+		<p>Генератор случайных чисел<br><br><input type="submit" id="sub" value="Сгенерировать"></p>
+		<!-- График -->
+    	<canvas id="buyers" width="600" height="400"></canvas>
+        <script>
+        	var buyers = document.getElementById('buyers').getContext('2d');
+        	var buyerData = {
+        		labels : ["Январь","Февраль","Март","Апрель","Май","Июнь"],
+        		datasets : [
+        			{
+        				fillColor : "rgba(172,194,132,0.4)",
+        				strokeColor : "#ACC26D",
+        				pointColor : "#fff",
+        				pointStrokeColor : "#9DB86D",
+        				data : [200,155,100,250,305,250]
+        			}
+        		]
+        	}
+    		new Chart(buyers).Line(buyerData);
+		</script>
+
+		<!-- Круговая диаграмма -->
+        </br></br>
+        <canvas id="countries" width="600" height="400"></canvas>
+        <script>
+            var countries= document.getElementById("countries").getContext("2d");
+            var pieData = [
+                    {
+                        value : 20,
+                        color : "#878BB6"
+                    },
+                    {
+                        value : 40,
+                        color : "#4ACAB4"
+                    },
+                    {
+                        value : 10,
+                        color : "#FF8153"
+                    },
+                    {
+                        value : 30,
+                        color : "#FFEA88"
+                    }
+                ];
+            var pieOptions = {
+                    segmentShowStroke : true,
+                    animateScale : true
+                };
+            new Chart(countries).Pie(pieData, pieOptions);
+        </script>
+
+        <!-- Гистограмма -->
+        </br></br>
+        <canvas id="income" width="600" height="400"></canvas>
+        <script>
+            var income = document.getElementById("income").getContext("2d");
+            var barData = {
+                labels : ["Январь","Февраль","Март","Апрель","Май","Июнь"],
+                datasets : [
+                    {
+                        fillColor : "#48A497",
+                        strokeColor : "#48A4D1",
+                        data : [456,479,324,569,702,600]
+                    },
+                    {
+                        fillColor : "rgba(73,188,170,0.4)",
+                        strokeColor : "rgba(72,174,209,0.4)",
+                        data : [364,504,605,400,345,320]
+                    }
+
+                ]
+            }
+           new Chart(income).Bar(barData);
+        </script>
+
+        <!-- Генирация случайных чисел -->
+		<script>
+    		$(document).ready(function(){
+    			$('#sub').on('click', function() {
+    				// График
+                    for(var i = 0; i < 6; i++) {
+    				    buyerData.datasets[0].data[i] = (Math.random()*250)+1|0;
+                    }
+    				new Chart(buyers).Line(buyerData);
+                    // Круговая диаграмма
+                    for(var j = 0; j < 4; j++) {
+                        pieData[j].value = (Math.random()*100)+1|0;
+                    }
+                    new Chart(countries).Pie(pieData, pieOptions);
+                    // Гистограмма
+                    for(var k = 0; k < 6; k++) {
+                        barData.datasets[0].data[k] = (Math.random()*250)+1|0;
+                        barData.datasets[1].data[k] = (Math.random()*250)+1|0;
+                    }                
+                    new Chart(income).Bar(barData);
+    			});
+    		});
+		</script>
+    </body>
+</html>

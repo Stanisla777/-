@@ -1,0 +1,429 @@
+@import url("fonts.css");
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'OpenSans', sans-serif;
+    color: #101010;
+    cursor: default;
+    font-size: 16px;
+    line-height: normal;
+    background: #fff;
+    height: auto;
+    min-height: 100%;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.wrap {
+    width: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+section,header,footer{
+    display: block;
+    position: relative;
+}
+
+.container {
+    zoom: 1;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+.container-pad-0{
+    zoom: 1;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+.container:after,
+    /*.container:before {*/
+    /*content: "";*/
+    /*display: table;*/
+    /*}*/
+.container:after {
+    clear: both;
+}
+a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a img {
+    text-decoration: none;
+}
+
+a:focus,a:hover,a:link,
+a:active {
+    outline: none!important;
+    text-decoration: none!important;
+    outline-width: 0;
+}
+a:hover{
+    text-decoration: none!important;
+}
+
+h1 {
+    font-size: 26px;
+    /*line-height: 30px;*/
+    font-weight: 700;
+    /*text-align: center;*/
+    margin: 0;
+}
+
+h2{
+    font-size: 17px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li{
+
+}
+li a{
+    font-size: 15px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+button {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+}
+button:focus{
+    outline: none;
+}
+
+
+/*ОБЩИЕ СТИЛИ*/
+.margin-auto{
+    margin: 0 auto;
+}
+.mar-top-30{
+    margin-top: 30px;
+}
+.mar-top-20{
+    margin-top: 20px;
+}
+.mar-top-10{
+    margin-top: 10px;
+}
+.mar-bot-30{
+    margin-bottom: 30px;
+}
+.mar-bot-20{
+    margin-bottom: 20px;
+}
+.mar-bot-10{
+    margin-bottom: 10px;
+}
+
+.mar-bot-5{
+    margin-bottom: 5px;
+}
+
+.mar-bot-top-30{
+    margin: 30px 0;
+}
+.mar-bot-top-10{
+    margin: 10px 0;
+}
+.mar-right-10{
+    margin-right: 10px;
+}
+.mar-right-20{
+    margin-right: 20px;
+}
+.pad-25{
+    padding: 25px 0;
+}
+.pad-10{
+    padding: 10px 0;
+}
+.pad-top-10{
+    padding-top: 10px;
+}
+.pad-bot-20{
+    padding-bottom: 20px;
+}
+.pad-10px{
+    padding: 10px;
+}
+.cur-pointer{
+    cursor: pointer;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+.text-center{
+    text-align: center;
+}
+.color-white{
+    color: #fff;
+}
+
+input{
+    position: relative;
+    /*width: 100%;*/
+    display: block;
+    /*margin-top: 10px;*/
+    /*background-color: #fff;*/
+    /*border-radius: 3px;*/
+    /*border: 1px solid #b7bfd2;*/
+    font-size: 15px;
+    color: #000;
+    padding-left: 15px;
+    font-family: "Open sans";
+    font-weight: 400;
+    /*height: 51px;*/
+    outline: none;
+}
+
+input:-moz-placeholder { color: #b7bfd2; }
+input::-webkit-input-placeholder { color: #b7bfd2;}
+
+textarea{/*Стили для поля ввода*/
+    /*width: 100%;*/
+    /*height: 50px;*/
+    padding-left: 15px;
+    /*border: 1px solid #a2a5b2;*/
+    /*border-radius: 3px;*/
+    /*margin-top: 10px;*/
+    /*font-size: 15px;*/
+    font-family: 'Open Sans', sans-serif;
+    /*overflow: hidden;*/
+    resize: none;
+    outline: none;
+    font-weight: 400;
+}
+textarea:-moz-placeholder { color: #a2a5b2; }
+textarea::-webkit-input-placeholder { color: #a2a5b2; }
+input:focus, textarea:focus{
+    outline: none;
+}
+
+
+
+button[disabled], html input[disabled] {
+    cursor: pointer;
+}
+label {
+    /*display: block;*/
+    /*color: #a4a7ad;*/
+    /*font-weight: 600;*/
+    /*font-size: 15px;*/
+    /*margin-bottom: 10px;*/
+    /*margin-top: 10px;*/
+    /*vertical-align: middle;*/
+}
+.label{
+    color: #a4a7ad;
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.fontweight600{
+    font-weight: 600;
+}
+.fontweight800{
+    font-weight: 800;
+}
+.fontweight700{
+    font-weight: 700;
+}
+/*Объкты на всех страницах*/
+.display-inline-top{
+    display: inline-block;
+    vertical-align: top;
+}
+.display-inline-middle{
+    display: inline-block;
+    vertical-align: middle;
+}
+.in-block{
+    display: inline-block;
+}
+.float-right{
+    float: right;
+}
+.float-left{
+    float: left;
+}
+
+.flex-space-around{
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.flex-space-around-center{
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.flex-space-between{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.flex-space-between-center{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*Трехколочный хедер*/
+.header-inner{
+
+}
+.header-inner-left{
+
+}
+.header-inner-right{
+
+}
+
+
+/*--------------МОДАЛЬНЫЕ ОКНА МЕДИА-МЕНЮ НА ВЕСЬ ЭКРАН-----------------*/
+/*Меню поп-ап*/
+/*.menu-icon{*/
+/*width: 40px;*/
+/*height: 40px;*/
+/*background: url("../img/iconMenu.png")center no-repeat;*/
+/*background-size: contain;*/
+/*cursor: pointer;*/
+/*}*/
+.media-menu {
+    padding-top: 20px;
+    /*margin-bottom: 40px;*/
+    position: relative;
+    display: none;
+    width: 100%;
+    /*height: 100%;*/
+    height: 95vh;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+}
+.media-close{
+    width: 30px;
+    height: 30px;
+    background: url("../img/icon-close.png")center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.wrapper-media-menu {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.media-menu-item{
+    margin-bottom: 10px;
+}
+
+.menu-link {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 50px;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #000;
+}
+.active-item{
+    background-color: #f2f6fb;
+
+}
+.active-item a{
+    color: #06ae8f;
+}
+.menu__link:hover{
+
+}
+
+
+
+/*------------------------------*/
+
+
+
+@media screen and (max-width: 890px){
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

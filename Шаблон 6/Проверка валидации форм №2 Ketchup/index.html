@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <title>Плагин Ketchup | Демонстрация для сайта RUSELLER.COM</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery.ketchup.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ketchup.js"></script>
+    <script type="text/javascript" src="js/jquery.ketchup.messages.js"></script>
+    <script type="text/javascript" src="js/jquery.ketchup.validations.basic.js"></script>
+	<script type="text/javascript" src="js/jquery.ketchup.validations.example.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <ul id="toc">
+      <li><a href="#default">Использование плагина с установками по умолчанию</a></li>
+      <li><a href="#styling">Стилизация контейнера для сообщений об ошибках</a></li>
+	  <li><a href="#out_arg">Пользовательская проверка без аргументов</a></li>
+	  <li><a href="#with_arg">Пользовательская проверка с аргументами</a></li>
+     </ul>
+    
+    <div id="wrapper">
+      
+      <h2 id="default">Использование плагина со установками по умолчанию</h2>
+      <form action="index.html" id="example1">
+        <div>
+          <label for="ex1_username">Имя пользователя</label>
+          <input type="text" id="ex1_username" class="validate(required, username)" />
+        </div>
+        <div>
+          <label for="ex1_password">Пароль</label>
+          <input type="password" id="ex1_password" class="validate(required)" />
+        </div>
+        <div>
+          <label for="ex1_password_conf">Подтверждение пароля</label>
+          <input type="password" id="ex1_password_conf" class="validate(required, match(#ex1_password))" />
+        </div>
+        <div>
+          <label for="ex1_roles">Специализация</label>
+          <p><input type="checkbox" name="role" value="jquery" /> jQuery</p>
+          <p><input type="checkbox" name="role" value="js" /> JavaScript</p>
+          <p><input type="checkbox" name="role" value="rails" /> Rails</p>
+          <p><input type="checkbox" name="role" value="php" /> PHP</p>
+          <p><input type="checkbox" name="role" value="wp" /> Wordpress</p>
+          <p><input type="checkbox" name="role" value="other" class="validate(rangeselect(1,3))" /> Другая</p>
+          <div class="clear"></div>
+        </div>
+        <div>
+          <label for="ex1_about">О себе</label>
+          <textarea id="ex1_about" rows="1" class="validate(rangelength(10,140))"></textarea>
+        </div>
+        <div class="submit">
+          <input type="submit" value="Отправить" />
+        </div>
+      </form>
+	  
+      <h2 id="styling">Стилизация контейнера для сообщений об ошибках</h2>
+      <form action="index.html" id="example2">
+        <div>
+          <label for="ex2_username">Имя пользователя</label>
+          <input type="text" id="ex2_username" rel="validate(required,username,rangelength(5,20))" />
+        </div>
+        <div>
+          <label for="ex2_email">E-Mail</label>
+          <input type="text" id="ex2_email" rel="validate(required,email)" />
+        </div>
+        <div class="submit">
+          <input type="Submit" value="Отправить" />
+        </div>
+      </form>
+       
+	  <h2 id="out_arg">Пользовательская проверка без аргументов</h2>
+      <form action="index.html" id="example3">
+        <div>
+          <label for="ex3_tomato">Только помидоры</label>
+          <input type="text" id="ex3_tomato" class="validate(помидор)" />
+        </div>
+        <div class="submit">
+          <input type="submit" value="Варим кетчуп!" />
+        </div>
+      </form>
+      
+	  <h2 id="with_arg">Пользовательская проверка с аргументами</h2>
+      <form action="index.html" id="example4">
+        <div>
+          <label for="ex4_yesno">Да или Нет</label>
+          <input type="text" id="ex3_yesno" class="validate(либо(да,нет))" />
+        </div>
+        <div>
+          <label for="ex4_km">Кетчуа или Горчица</label>
+          <input type="text" id="ex3_km" class="validate(либо(кетчуп,горчица))" />
+        </div>
+        <div class="submit">
+          <input type="submit" value="Варим кетчуп!" />
+        </div>
+      </form>
+ 
+	  
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<script>
+$(document).ready(function() {
+function blink(){
+    $('#block-new50')
+    .fadeOut('fast')
+    .fadeIn('fast');
+
+    setTimeout(blink,1000);
+}
+
+blink();
+});
+</script>

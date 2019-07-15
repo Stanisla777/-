@@ -1,0 +1,90 @@
+
+” нас есть блок, который например занимает 30% от ширины экрана. Ќужно сделать так, чтобы ширина и высота пропорционально измен€лась при адаптиве. vw не подойдет, так как у нас блок не задаетс€ в vw
+
+<div class="responsive-box">
+   <div class="content"></div>
+</div>
+
+
+.responsive-box {
+	position: relative;
+	width: 30%; /* ѕроизвольна€ ширина, котора€ требуетс€ дл€ блока */
+}
+.responsive-box::before {
+	content: "";
+	display: block;
+	padding-top: 56.52%; /* — помощью этого padding мы задаем пропорцию высоты т ширины */
+}
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url(images/bg.jpg) no-repeat center center; /* «адаем фон, если требуетс€ */
+    background-size: cover; /* –аст€гиваем фон под размеры блока, если требуетс€ */
+}
+
+
+ѕри этом в блоке content могут располагатьс€ другие блоки
+
+<div class="responsive-box">
+    <div class="content">
+        <div class="content-flex">
+            <div class="ty"></div>
+            <div class="ty"></div>
+            <div class="ty"></div>
+        </div>
+        <div class="gg">привет</div>
+    </div>
+</div>
+
+
+
+.content-flex{
+    display: flex;
+    height: 100%;      /*чтобы его высота была на всю высоту родительского блока content*/
+    background: red;
+    align-items: baseline;
+}
+.ty{
+    flex-grow: 1;
+    margin-right: 10px;
+    height: 100%;
+    flex-basis: 40px;
+    background: #000000;
+}
+.ty:last-child{
+    margin-right: 0;
+}
+
+ƒругими словами, мы можем внутрь помещать блоки, кторые будут измен€тьс€ в зависимости от размеров радительского блока.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

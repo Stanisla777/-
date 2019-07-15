@@ -1,0 +1,157 @@
+<div class="mn-wrapper-progress">
+
+    <div class="book-progress" id="book-progress">
+
+        <div class="book-progress__item book-progress__item-cover">
+            <h2 class="h2-title">Наши достижения!</h2>
+        </div>
+
+        <div class="book-progress__item">
+            <h2 class="">1977</h2>
+        </div>
+
+        <div class="book-progress__item">
+            <h2 class="">1986</h2>
+        </div>
+
+        <div class="book-progress__item">
+            <h2 class="">1998</h2>
+        </div>
+
+        <div class="book-progress__item" style="background-image: url('img2/UvelProizv2.jpg')">
+            <h2 class="">2013</h2>
+        </div>
+
+    </div>
+
+    <ul class="book-progress-control">
+        <li class="book-progress-control__back"><a id='back' href="#" title='Назад'> </a></li>
+        <li class="book-progress-control__first"><a id='first' href="#" title='В начало'></a>
+        </li>
+        <li class="book-progress-control__next"><a id='next' href="#" title='Вперед'></a></li>
+
+    </ul>
+</div>
+
+/*Плашка в которой находится слайдер*/
+.mn-wrapper-progress {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 30px;
+  width: 100%;
+  margin: 0 auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mn-wrapper-progress:before {
+  content: "";
+  display: block;
+  padding-top: 40%;
+}
+.book-progress {
+  position: absolute!important; /*если слайдер находится отдельно, то relative*/
+  top: 42px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.wowbook-handle.wowbook-left,
+.wowbook-handle.wowbook-right {
+  width: 30% !important; /*область захвата для листания*/
+}
+.wowbook-handle.wowbook-right {
+  left: 70% !important;
+}
+.wowbook {
+  margin: 0 auto; /*чтобы слайдер был по середине*/
+}
+
+.mn-wrapper-progress #book-progress {
+  width: 60%!important; /*делаю слайдер резиновым*/
+  height: 70%!important;
+}
+
+.book-progress__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+}
+.book-progress__item:not(.book-progress__item-cover) {
+  padding: 96px 10px;
+}
+.book-progress__item:not(.book-progress__item-cover) h2 {
+  color: #dc1749;
+}
+.book-progress__item h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.wowbook-book-shadow {
+  height: 100%!important;
+}
+
+/*копки листания*/
+.book-progress-control {
+  display: flex;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+.book-progress-control li {
+  width: 35px;
+  height: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.book-progress-control li a {
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}
+.book-progress-control__back {
+  background-image: url('../img2/ProgressArrowLeft3.png');
+}
+.book-progress-control__next {
+  background-image: url('../img2/ProgressArrowRight3.png');
+}
+.book-progress-control__first {
+  background-image: url('../img2/ProgressArrowHome3.png');
+  margin: 0 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 1px #000;
+}
+
+js
+
+$('#book-progress').wowBook({
+    height : 500,
+    width : 800,
+    centeredWhenClosed : true,
+    hardcovers : true,
+    responsiveHandleWidth : 100
+    // ,turnPageDuration : 1000
+    ,numberedPages : [1,-2]
+    // ,transparentPages : true
+    ,controls : {/*кнопки управления, у меня их три*/
+        next : '#next',
+        back : '#back',
+        first : '#first'
+
+    }
+});
+
+
+
+
+
+
+

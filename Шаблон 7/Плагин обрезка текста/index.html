@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dotdotdot</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="jquery.dotdotdot.min.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript">
+	$(function(){
+		$("#dot1").dotdotdot();
+		$("#dot2").dotdotdot();
+		$("#dot3").dotdotdot({
+			after: "a.readmore"
+		});
+		$('#dot4').dotdotdot({
+			watch: "window"
+		});
+		$("#dot5 .pathname").each(function(){
+			var path = $(this).html().split("/");
+			if (path.length > 1 ){
+				var name = path.pop();
+				$(this).html(path.join("/") + "<span class='filename'>/" + name + "</span>");
+				$(this).dotdotdot({
+					after: ".filename",
+					wrap: "letter"
+				});						
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="intro">
+			<h1>jQuery.dotdotdot</h1>
+			<p>
+				Advanced cross-browser ellipsis for multiple line content.<br />
+				Demo's and documentation: <a href="http://dotdotdot.frebsite.nl" target="_blank">dotdotdot.frebsite.nl</a>
+			</p>
+		</div>
+		<div class="example">
+			<p><strong>Только текст:</strong></p>
+			<div class="l">
+				<p class="before">До:</p>
+				<div class="box before">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+				</div>
+			</div>
+			<div class="r">
+				<p class="after">После:</p>
+				<div class="box after" id="dot1">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+				</div>
+			</div>
+		</div>
+		<div class="example">
+			<p><strong>Текст с разметкой:</strong></p>
+			<div class="l">
+				<p class="before">До:</p>
+				<div class="box before">
+					<p><em>Lorem Ipsum</em> is simply dummy text of the <strong>printing</strong> and <strong>typesetting industry</strong>.</p>
+					<p><em>Lorem Ipsum</em> has been the industry's standard dummy text ever since <strong>the 1500s</strong>, when an unknown printer took a <em>galley of type</em> and scrambled it to make a type specimen book.</p>
+					<p>It has survived not only <strong>five centuries</strong>, but also the leap into <strong>electronic typesetting</strong>.</p>
+				</div>
+			</div>
+			<div class="r">
+				<p class="after">После:</p>
+				<div class="box after" id="dot2">
+					<p><em>Lorem Ipsum</em> is simply dummy text of the <strong>printing</strong> and <strong>typesetting industry</strong>.</p>
+					<p><em>Lorem Ipsum</em> has been the industry's standard dummy text ever since <strong>the 1500s</strong>, when an unknown printer took a <em>galley of type</em> and scrambled it to make a type specimen book.</p>
+					<p>It has survived not only <strong>five centuries</strong>, but also the leap into <strong>electronic typesetting</strong>.</p>
+				</div>
+			</div>
+		</div>
+		<div class="example">
+			<p><strong>С элементом после:</strong></p>
+			<div class="l">
+				<p class="before">До:</p>
+				<div class="box before">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					<a href="#" class="readmore">Read more &raquo;</a>
+				</div>
+			</div>
+			<div class="r">
+				<p class="after">После:</p>
+				<div class="box after" id="dot3">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+					<a href="#" class="readmore">Read more &raquo;</a>
+				</div>
+			</div>
+		</div>
+		<div class="example resize">
+			<p><strong>С изменяющимся окном:</strong></p>
+			<div class="l">
+				<p class="before">До:</p>
+				<div class="box before">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+				</div>
+			</div>
+			<div class="r">
+				<p class="after">После:</p>
+				<div class="box after" id="dot4">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+				</div>
+			</div>
+		</div>
+		<div class="example">
+			<p><strong>Читаемые ссылки</strong></p>
+			<div class="l">
+				<p class="before">До:</p>
+				<div class="box before pathname">
+					<div class="pathname">www.website.com/file.html</div>
+					<div class="pathname">www.website.com/with/a/long/pathname/file.html</div>
+				</div>
+			</div>
+			<div class="r">
+				<p class="after">После:</p>
+				<div class="box after pathname" id="dot5">
+					<div class="pathname">www.website.com/file.html</div>
+					<div class="pathname">www.website.com/with/a/long/pathname/file.html</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

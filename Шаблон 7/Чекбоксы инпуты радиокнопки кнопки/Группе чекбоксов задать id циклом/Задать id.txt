@@ -1,0 +1,9 @@
+$('.checkbox-container input[type="checkbox"]').each(function(i) {
+            $(this).attr('id', 'box'+(i+1));
+        });
+
+        $('.checkbox-container label').each(function(i) {
+            $(this).attr('for', 'box'+(i+1));
+
+            
+        });

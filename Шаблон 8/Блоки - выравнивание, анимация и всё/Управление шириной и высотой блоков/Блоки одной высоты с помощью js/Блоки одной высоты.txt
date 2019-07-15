@@ -1,0 +1,12 @@
+var maxheight=0;
+$('.box').each(function(){
+    height = $(this).height();
+
+    if(height>maxheight){
+        maxheight = height
+
+    }
+
+});
+
+$('.box').height(height);

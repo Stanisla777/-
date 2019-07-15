@@ -1,0 +1,11 @@
+function blink(selector){
+        $(selector).fadeOut(5000, function(){
+            $(this).fadeIn(200, function(){
+                blink(this);
+            });
+        });
+    }
+
+    $(document).ready(function(){
+        blink('#img_1');
+    });

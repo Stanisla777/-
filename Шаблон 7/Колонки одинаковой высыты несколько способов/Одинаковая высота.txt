@@ -1,0 +1,55 @@
+Самый простой способ, это без использования js, с помощью flex
+
+
+<div class="wrapper">
+        <div class="col col1">
+            <p>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+            </p>
+        </div>
+        <div class="col col2">
+            <p>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem<br>
+            </p>
+        </div>
+    </div>
+
+.wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+И после этого блоки будут одинаковой высоты!
+
+Но здесь есть один нюанс. Когда блоки находятся в одном ряду, они будут одинаковой высоты. Когда же блоки находятся на разных строках, они уже не будут одной высоты. Тогда нам здесь придет на помощь плагин, который у уменя в этой же папке. Вызывается:
+
+$('.blockkkkk').jcolumn();
+В этом плагине максимальная ширина на которой действует плагин 767px. Поэтому нужно влезть и поменять значение
+
+
+
+
+
+
+Ну а если уж без js никуда, то вот
+
+var maxHeight = 0;
+    $(".wrapper-advantage").each(function(){
+        if ( $(this).height() > maxHeight )
+        {
+            maxHeight = $(this).height();
+        }
+    });
+
+$(".wrapper-advantage").height(maxHeight);

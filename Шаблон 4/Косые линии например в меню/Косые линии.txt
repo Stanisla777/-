@@ -1,0 +1,20 @@
+Косые линии рассмотрим на примере меню, которые отделяют один пункт меню от другого
+<ul>
+  <li><a href="#">О нас</a></li>
+  <li><a href="#">Возможности</a></li>
+</ul>
+
+В стилях мы задаём li рамку и поворачивае на 30 градусов. Но так как у нас будет поворачиваться и текст, а мы поворачиваем в другую сторону
+
+li{
+    border-right: 1px solid #000000;
+    -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+}
+.blok1_menu ul li a{
+    font-size: 12px;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+}

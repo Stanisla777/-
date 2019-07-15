@@ -1,0 +1,64 @@
+
+/*Выравнивание блоков в бутстрапе на странице Возможности*/
+    var height = $(".undeniable-advantages-col1").height();
+    $(".undeniable-advantages-col2").height(height);
+
+
+jQuery.fn.autoheight = function() {
+            var $maxHeight = 0;
+            jQuery(this).each(function() {
+                if (jQuery(this).height() > $maxHeight ) {
+                    $maxHeight = jQuery(this).height();
+                }
+            });
+            jQuery(this).height($maxHeight);
+        };
+
+        jQuery(".undeniable-advantages-b2b-col3, .undeniable-advantages-b2b-col4").autoheight();
+        jQuery(window).resize(function() {
+            jQuery(".undeniable-advantages-b2b-col5, .undeniable-advantages-b2b-col6").height("auto").autoheight();
+        });
+
+
+
+
+
+Самое простое, когда пофиг, что человек меняет ширину экрана
+var maxHeight = 0;
+    $(".wrapper-advantage").each(function(){
+        if ( $(this).height() > maxHeight )
+        {
+            maxHeight = $(this).height();
+        }
+    });
+
+
+Этот способ, когда человек может менять ширину экрана, текст может перескакивать, высата блоков меняться
+
+var maxheight =0;
+        function auto_height() {
+            $('.wrapper div').each(function () { //циклом прохожу все блоки
+
+                if ($(this).height() > maxheight) {//записываю в переменную после каждого обхода большую величину
+                    maxheight = $(this).height();
+                }
+            });
+            echo(maxheight);
+            $('.wrapper-item').css('minHeight',maxheight);//всем блокам задаю наибольшую высоту, делаю это через
+                                                          //min-height, чтобы блок оставался резиновым, когда например пользователь
+                                                         //уменьшает экран и текст перескакивает, увеличивая блок
+            maxheight =0;//обнуляю переменную
+        }
+        auto_height();//вызываю функцию
+        $(window).resize(function() {//а это чтобы при уменьшении окна браузера скрипт каждый раз вызывался
+            $('.wrapper div').css('minHeight',maxheight);//сейчас сюда записался 0
+            auto_height();//вызвадлась функция и всё отработало
+    });
+
+
+
+
+
+
+
+

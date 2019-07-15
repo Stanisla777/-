@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+        <meta name="description" content="Анимация текста на jQuery" />
+        <meta name="keywords" content="text animation,анимация текста, текстовый эффект, text effect, jquery, plugin, плагин, jquery plugin, javascript, Web Design, javascript framework, анимация" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+        <title>Анимация текста на jQuery | pcvector.net</title>
+        <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="src/jquery.textanimation.js"></script>
+		
+		        <style>
+        div.demo{
+           font-size: 50px;
+           margin: 100px; 
+        }
+        </style>        
+    </head>
+    <body>
+	
+<div class="topHeader">
+	<a class="backArticle" href="http://pcvector.net/scripts/text_and_link_effects/346-animaciya-teksta-na-jquery.html">Назад к статье &gt;&gt;&gt;</a>
+</div>	
+
+        <h1>jQuery плагин для анимации текста</h1>
+        <div id="demo_roll1" class="demo" >Режим Roll.</div>		
+        <div id="demo_roll2" class="demo" >Вы  можете изменять настройки.</div>
+        <div id="demo_step1" class="demo" >Режим Step.</div>
+        <div id="demo_step2" class="demo" >Вы  можете изменять настройки.</div>
+        <div id="demo_high1" class="demo" >Режим Highlight.</div>
+        <div id="demo_high2" class="demo" >Вы  можете изменять настройки.</div>
+        <div id="demo_jump1" class="demo" >Режим Jump.</div>
+        <div id="demo_jump2" class="demo" >Вы  можете изменять настройки.</div>
+        <div id="demo_puff1" class="demo" >Режим Puff.</div>
+        <div id="demo_puff2" class="demo" >Вы  можете изменять настройки.</div>
+		
+        <script type="text/javascript">
+$(document.body).ready(function(){
+    $("div#demo_roll1").textAnimation({
+		mode: "roll"
+	});
+    $("div#demo_roll2").textAnimation({
+		mode: "roll",
+		minsize: 20,
+		magnification: 20,
+		fixed: "top",
+		delay: 5,
+		stuff: 1.5
+	});
+    $("div#demo_step1").textAnimation({
+		mode: "step"
+	});
+	$("div#demo_step2").textAnimation({
+	    mode:"step",
+	    minsize:20,            //минимальный размер шрифта[integer]
+	    maxsize:60,            //максимальный размер шрифта[integer]
+	    upper:false,           //верхний шаг? [boolean]
+	    fixed:"top",           //фиксировать top или bottom ["top","bottom"]
+	    stuff:2.0,             //величина наложения букв шрифта[float]
+	    delay:200,             //задержка между анимацией символов
+	    interval:0,            //интервал анимации
+	    duration:1000          //продолжительность анимации
+	});
+    $("div#demo_high1").textAnimation({
+		mode: "highlight"
+	});
+    $("div#demo_high2").textAnimation({
+		mode: "highlight",
+		baseColor: "#111111",
+		highlightColor: "#2FFF5F",
+		delay: 35,
+		interval: 0,
+		duration: 100
+	});    
+	$("div#demo_jump1").textAnimation({
+	    mode:"jump"
+	});
+	$("div#demo_jump2").textAnimation({
+	    mode:"jump",         
+	    altitude:10,              //высота прыжка[integer] 
+	    bound :false,             //связанная анимация[boolean]
+        fixed:"bottom",           //фиксировать top или bottom ["top","bottom"]
+	    delay:80,                 //задержка анимации между символами[integer] 
+	    interval:0,               //интервал времени для анимации[integer]
+	    duration:400              //продолжительность анимации[integer]
+	});
+    $("div#demo_puff1").textAnimation({
+        mode:"puff"
+    });
+    $("div#demo_puff2").textAnimation({
+        mode:"puff",
+        color:"#77FF6F",          //подсветка пуфф текста
+        percent:200,              //масштабирование шрифта в %.[integer]     
+        interval:1000,               //интервал времени для анимации[integer]
+        duration:1000,             //продолжительность анимации[integer]
+        times : 5                 //сколько раз произваодить анимацию puff[integer]
+    });
+});
+        </script>
+		
+<!-- pcvector.net -->
+<script type="text/javascript" src="http://pcvector.net/templates/pcv/js/pcvector.js"></script>
+<!-- /pcvector.net -->		
+    </body>
+</html>

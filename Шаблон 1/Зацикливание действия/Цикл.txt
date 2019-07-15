@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $("#img_1").hide();
+
+  function dada(){
+
+     Любое дейсвие
+
+  };
+
+setTimeout(dada, 5000);
+
+
+});

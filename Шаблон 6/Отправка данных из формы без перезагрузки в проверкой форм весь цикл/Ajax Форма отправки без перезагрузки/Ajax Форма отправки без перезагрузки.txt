@@ -1,0 +1,21 @@
+<form id="callback" action="#" method="post">
+    <input name="name" type="text" placeholder="Введите имя"/>
+    <input name="tel" type="text" placeholder="Введите телефон"/>
+    <button class="" type="submit">Отправить</button>
+</form>
+
+
+<script>
+    $(document).ready(function() {
+        $("#callback").submit(function(){
+            $.ajax({
+                type:"POST",
+                url:"function-db.php",
+                data:$("#callback").serialize()
+            }).done(function(){
+                $("#callback input").val("");
+            });
+            return false;
+        });
+    });
+</script>

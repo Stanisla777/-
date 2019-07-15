@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Boutique carousel demo</title>
+
+    <!--
+    NOTE: For copying source code, see example_basic.html
+    -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light'>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main2.css">
+    <script src="demos.js"></script>
+    <script src="boutique.js"></script>
+    <script>
+        $(function(){
+            $('#boutique').boutique();
+        });
+    </script>
+</head>
+<body>
+<!-- External controls example box -->
+<div id="controls">
+    <div id="controls_button"><div>&lt;</div></div>
+    <div id="controls_inner">
+        <b>External control examples:</b>
+        <ul>
+            <li><a href="#" onclick="boutique_next(); return false">Next frame</a></li>
+            <li><a href="#" onclick="boutique_previous(); return false">Previous frame</a></li>
+            <li><a href="#" onclick="boutique_startautoplay(); return false">Start autoplay</a></li>
+            <li><a href="#" onclick="boutique_stopautoplay(); return false">Stop autoplay</a></li>
+            <li><a href="#" onclick="boutique_next(5); return false">Go forward 5 frames</a></li>
+            <li><a href="#" onclick="boutique_goto(3); return false">Go to frame 3</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<div id="content">
+<h1>boutique carousel</h1>
+
+
+
+<!-- The element that the plugin is called on: -->
+<ul id="boutique">
+    <li>
+         <img class="fofo1" src="imagine/foto1.jpg">
+    </li>
+    <li>
+         <img class="fofo2" src="imagine/foto2.jpg">
+    </li>
+    <li>
+         <img class="fofo3" src="imagine/foto3.jpg">
+    </li>
+    <li>
+         <img class="fofo4" src="imagine/foto4.jpg">
+    </li>
+    <li>
+         <img class="fofo5" src="imagine/foto5.jpg">
+    </li>
+
+</ul>
+
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+Оказывается делается очень просто . Бдлк с иконкой загрузки располагается где угодно. Например при агркзке страницы целесообразно располагать так
+
+<body>
+
+<div id="before-load">
+    <!-- Иконка Font Awesome -->
+    <i class="fa fa-spinner" aria-hidden="true"></i>
+</div>
+
+
+Стили с анимацией, чтобы иконка ещё и крутилась 
+
+#before-load {
+  position: fixed; /*фиксированное положение блока*/
+  left: 0; /*положение элемента слева*/
+  top: 0; /*положение элемента сверху*/
+  right: 0; /*положение элемента справа*/
+  bottom: 0; /*положение элемента снизу*/
+  background: #fff; /*цвет заднего фона блока*/
+  z-index: 1001; /*располагаем его над всеми элементами на странице*/
+}
+#before-load i {
+  font-size: 70px; /*размер иконки*/
+  position: absolute; /*положение абсолютное, позиционируется относительно его ближайшего предка*/
+  left: 50%; /*слева 50% от ширины родительского блока*/
+  top: 50%; /*сверху 50% от высоты родительского блока*/
+  margin: -35px 0 0 -35px; /*смещение иконки, чтобы она располагалась по центру*/
+
+  animation-name: cog;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@-ms-keyframes cog {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes cog {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes cog {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes cog {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+Сам js
+
+$(document).ready(function() {
+
+   $('#before-load').find('i').fadeOut().end().delay(20).fadeOut('slow');
+
+
+})
+
+Смысл прост. Когда у нас страница только загружается иконка крутится c помощью css. Как только дело доходит до js - первый скрипт это иконка пропадает медленно
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

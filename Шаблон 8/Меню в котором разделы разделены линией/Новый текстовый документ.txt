@@ -1,0 +1,42 @@
+<ul class="menu">
+    <li><a href="#">体睨 1</a></li>
+    <li><a href="#">体睨 2</a></li>
+    <li><a href="#">体睨 3</a></li>
+    <li><a href="#">体睨 4</a></li>
+    <li><a href="#">体睨 5</a></li>
+    <li><a href="#">体睨 6</a></li>
+</ul>
+
+.menu{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul li:not(:first-child):after{
+    content: "";
+    display: block;
+    height: 10px;
+    width: 1px;
+    background: #000;
+    vertical-align: middle;
+    position: absolute;
+}
+
+
+ul li a{
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    padding: 0 10px;
+}

@@ -1,0 +1,134 @@
+.container{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+
+.wrapper-slider{
+    position: relative;
+    width: 51%;
+    max-width: 490px;
+    min-width: 315px;
+    box-sizing: content-box;
+    margin-right: 20px;
+}
+
+.wrapper-slider .wrapper-slide img{
+    width: 100%;
+    height: auto;
+}
+.wrapper-slider .wrapper-slide-description{
+    background-color: #1a425a;
+    padding: 15px 10px 10px 25px;
+}
+.wrapper-slider .wrapper-slide-description h3{
+    color: #fff;
+    font-weight: 100;
+}
+.wrapper-slider .wrapper-slide-description p{
+    color: #fff;
+    font-size: 14px;
+}
+
+/*Пейджеры и стрелки*/
+
+/*Стрелки*/
+.wrapper-slider .bx-prev {
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    margin-top: -15px;
+    text-align: center;
+    text-indent: -9000px;
+    z-index: 100;
+    font-size: 17px;
+    background: #6f97af;
+    color: #fff;
+}
+
+
+.wrapper-slider .bx-next{
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    margin-top: -15px;
+    text-align: center;
+    text-indent: -9000px;
+    z-index: 100;
+    font-size: 17px;
+    background: #6f97af;
+    color: #fff;
+}
+
+
+
+/* Пейджеры */
+/*Настраивается расположение пейджеров*/
+
+.wrapper-slider .bx-wrapper .bx-pager{ /*I вариант*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+
+}
+
+.wrapper-slider .bx-pager-item{/*расстояние между отдельными пейджерами */
+    margin-right: 10px;
+}
+.wrapper-slider .bx-pager-item:last-child{
+    margin-right: 0;
+}
+
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.wrapper-slider .bx-wrapper .bx-pager.bx-default-pager a { /*Настройка неактивных кругляшков*/
+    background:red;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    /*margin: 10px 10px;*//*Настраивается расстояние между кругляшками*/
+    outline: 0;
+    border-radius: 50%;
+
+}
+
+.wrapper-slider .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #2c5f7f;
+}
+
+
+
+
+.wrapper-slider-tabs{
+    align-items: flex-start;
+}
+.wrapper-slider{
+    border: 10px solid #fff;
+    /*background: url("../img/SliderImg.jpg")center no-repeat;*/
+}
+.wrapper-slider .wrapper-slide{
+    display: none;
+}

@@ -1,0 +1,48 @@
+ѕрежде всего, изображени€ до и после должны быть одного размера.  аждое изображение должно быть в отдельном блоке, и оба изображени€ еще в одном блоке с ID. ¬от так:
+
+<div id="container">
+<div><img alt="before" src="p/before.jpg" width="600" height="366" /></div>
+<div><img alt="after" src="p/after.jpg" width="600" height="366" /></div>
+</div>
+
+ƒл€ правильной работы плагина в шапке документа нам необходимо также прописать фреймворк jQuery, jQuery UI, скрипт плагина.
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+ <script src="http://media.lpgenerator.ru/uploads/images/jquery.beforeafterstas.js"></script>
+
+Ѕиблиотеку дл€ jqueryUI € скачал с сайта
+https://developers.google.com/speed/libraries/?hl=ru-RU&csw=1
+
+—ам плагин € уже разместил в хранилище:
+<script src="http://media.lpgenerator.ru/uploads/images/jquery.beforeafterstas.js"></script>
+
+ќпции
+
+ћожно настраивать следующие опции:
+
+animateIntro - позвол€ет задать стартовое положение бегунка с правой стороны и медленно двигать его налево до центра (по умолчанию - false)
+
+introDelay - если animateIntro true, тогда можно задать задержку в милисекундах перед началом анимации
+
+introDuration - если animateIntro true, тогда можно задать продолжительность в милисекундах всей анимации
+
+showFullLinks - показывать или не показывать ссылки под картинкой, которые позвол€ют сразу увидеть картинку до или после
+
+ƒанные опции необходимо прописывать при инициализации:
+
+$(document).ready(function() {
+
+    $('#container').beforeAfter({
+        animateIntro : true,
+        introDelay : 2000,
+        introDuration : 500,
+        showFullLinks : false
+    });
+
+});
+Ќеудобство состоит в том, что картинки дл€ полосы прокрутки расположены внутри скрипта. ѕоэтому надо открывать плагин, мен€ть в нем путь к картинке и закачивать в хранилище.
+
+
+

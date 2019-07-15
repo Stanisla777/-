@@ -1,0 +1,29 @@
+Задача, при наведении наблок, он исчезант и появляется другой блок.
+
+В редакторе накладываем одну картинку на другую. И в стилях картинка которая будет исчезать прописываем:
+
+block-new84:hover{
+    opacity: 0;
+    transition: opacity .75s ease-in-out;
+    -moz-transition: opacity .75s ease-in-out;
+    -webkit-transition: opacity .75s ease-in-out;
+}
+
+Задача может быть следующей: Картинка при наведении на которую мышкой исчезает и появляется блок с текстом. В этом случае накладываем блок с текстом на картинку, а в стилях прописываем ему opacity:0. Таким образом картинка видна, а блок с изображением нет.
+
+<style>
+#block-new154{
+     opacity: 0;
+     transition: opacity .75s ease-in-out;
+     -moz-transition: opacity .75s ease-in-out;
+     -webkit-transition: opacity .75s ease-in-out;    
+} 
+#block-new154:hover{
+    opacity: 1;
+    transition: opacity .75s ease-in-out;
+    -moz-transition: opacity .75s ease-in-out;
+    -webkit-transition: opacity .75s ease-in-out;
+}
+</style>
+
+#block-new154 - это блок, который исчезает при наведении

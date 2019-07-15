@@ -1,0 +1,171 @@
+<div class="filter-price__slider-range ">
+    <div class="slider-range" id="slider-range"></div>
+    <div class="filter-price__price-display">
+        <a class="button filter-price__button">
+            <p>Filter</p>
+        </a>
+
+        <div class="filter-price__display">
+            <input class="form-control" name="price" id="price">
+            <p> - </p>
+            <input class="form-control" name="price" id="price-2">
+        </div>
+
+    </div>
+</div>
+
+На сайте я видел так, что нименьшая и наибольшая цифры попадали в один импут. Но я переделал так, чтобы цифры попадали в два разных инпута, объедиенных одним контейнером.
+
+Стили
+
+.slider-range {
+  /*внешняя полоска*/
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: #444444;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  height: 0.8em;
+  position: relative;
+  text-align: left;
+}
+.slider-range .ui-slider-range {
+  /*внутренняя полоска*/
+  top: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  font-size: 0.7em;
+  display: block;
+  border: 0;
+  background-position: 0 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #2a2a2a;
+  color: #444444;
+  font-weight: bold;
+}
+.slider-range .ui-slider-handle {
+  /*ограничители*/
+  border: 3px solid #d58e32;
+  background-color: #fff;
+  font-weight: bold;
+  color: #0073ea;
+  border-radius: 50%;
+  outline: none;
+  top: -0.3em;
+  margin-left: -0.6em;
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  cursor: default;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+.filter-price {
+  margin-top: 40px;
+}
+.filter-price__slider-range {
+  margin-top: 30px;
+}
+.filter-price__price-display {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.filter-price__button {
+  background-color: #d58e32;
+}
+.filter-price__button p {
+  text-transform: uppercase;
+  color: #fff;
+}
+.filter-price__display {
+  display: flex;
+  align-items: center;
+  width: 145px;
+  text-align: center;
+  border: 2px solid #e1e1e1;
+  padding: 0;
+}
+.form-control {
+  border: none;
+  width: 50%;
+  font-weight: 600;
+  color: #2a2a2a;
+}
+
+
+js
+
+$( "#slider-range" ).slider({
+    range: true,
+    min: 135,
+    max: 1000,
+    values: [ 100, 500 ],
+    slide: function( event, ui ) {
+        $( "#price" ).val( "$" + ui.values[ 0 ]);
+        $( "#price-2" ).val( "$" + ui.values[ 1 ] );
+
+    }
+});
+    $("#price").val("$" + $("#slider-range").slider("values", 0));
+
+    $("#price-2").val("$" + $("#slider-range").slider("values", 1));
+
+
+
+
+А ниже, чтобы по нажатию кнопки появлялись товары попадающие в диапазон
+
+
+$('.filter-price__button').on('click',function(){
+    $('.product-card').show();//чтобы появлялись товары пропавшие ранее
+    var price = $('#price').val();//цифры из диапазона
+    price = parseFloat(price.slice(1));
+
+    var price_2 = $('#price-2').val();
+    price_2 = parseFloat(price_2.slice(1));
+
+    $('.col-left__product-row-center .product-card').each(function(){
+        //получаем цену з карточки и сравгиваем с диапазоном
+        var prices = $(this).find('.wrapper-cost-goods__real-price').text();
+        prices = parseFloat(prices.slice(1));
+        if(prices>price_2||prices<price){
+            $(this).hide();
+        }
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

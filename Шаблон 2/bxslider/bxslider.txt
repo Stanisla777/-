@@ -1,0 +1,144 @@
+Плагин находится в хранилище под названием
+<script src="http://media.lpgenerator.ru/uploads/images/jquery.srasbxslider.min.js"></script>
+
+Слайдер заворачиваем в контейнер.
+	<div class="slider"> 
+          <ul class="bxslider">
+             <li>
+		<div id="zagolovok"></div>
+		<div id="kartinka">
+		   <img src="kartinka" width="100">
+		</div>
+	     </li>
+	     <li>
+		<div id="zagolovok"></div>
+		<div id="kartinka">
+		   <img src="kartinka" width="100">
+		</div>
+	     </li>	
+          </ul>
+        </div><!--Закрывается блок slider-->	
+
+В стили записываем:
+.slider{
+    position: relative;
+    width: 960px; /*можно управлять шириной слайдера*/
+    height: 530px;
+    margin:0 auto;
+    box-sizing: content-box;
+}
+#bxslider {
+
+    margin: 0;
+    padding: 0;
+}
+.bxslider>li{
+    height: 530px;  /*Если не зададим высоту отдельного окна слайдера картинка обрежится. Если слайда не появилось       
+    margin: 0;	      попробывать увеличить высоту*/
+    padding: 0;
+}
+
+.bx-wrapper{
+     max-width: 700px;
+ }
+/*Кругляшки и какашки*/
+.bx-prev{
+    display: block;
+    height: 50px;
+    width: 34px;
+    background: url("images/slider1strlevo.png") no-repeat;
+    position: absolute;
+    top:580px;
+    left: 319px;
+    text-indent: -9000px;
+    z-index: 100;
+}
+.bx-prev:hover{
+    position: absolute;
+    left: 318px;
+}
+.bx-next{
+    display: block;
+    height: 50px;
+    width:34px;
+    background: url("images/slider1strpravo.png") no-repeat;
+    position: absolute;
+    top: 580px;
+    right: 309px;
+    text-indent: -9000px;
+    z-index: 100;
+}
+.bx-next:hover{
+   position: absolute;
+    right: 308px;
+}
+.bx-caption{
+    height: 30px;
+}
+
+/* PAGER2 из LPgenerator Кругляшки */
+
+.bx-wrapper .bx-pager {   /*Настраивается расположение кругляшков*/
+    position: absolute;
+    left: 40.5%;
+    top: 338px;
+
+    z-index: 50;
+
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a { /*Настройка неактивных кругляшков*/
+    background: #ffffff;
+    text-indent: -9999px;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 248px 19px;/*Настраивается расстояние между кругляшками*/
+    outline: 0;
+    border-radius: 50%;
+
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #f87500;
+}
+
+Вызов слайдера:
+
+$('.bxslider').bxSlider({
+        mode:"fade"
+    });
+
+Основные настройки на сайте:
+http://fot-tof.ru/Funkcional_nyj_slajder_bxSlider.htm
+
+Thumbnail pager - method 2(http://bxslider.com/examples/thumbnail-pager-2) это слайдер, когда нажимаешь на определенную кнопку и открывается нужный слайд. Как с айфонами, где я вешал клик на кнопочку с определенным цветом.
+
+
+Свойсва полезные:
+infiniteLoop: false(true) - при достижении послежнего слайда, останавливается. Если true - зацикливается
+
+hideControlOnEnd - будучи true, спрячет кнопку 'next' при достижении последнего слайда, и наоборот. Примечание: Используется, если infiniteLoop: false. по умолчанию: false
+Но чтобы эта штука работала надо прописать в стилях, что будет происходить со стрелками
+
+.bx-wrapper .bx-controls-direction a.disabled{
+    display: none;
+    cursor: none;
+}
+Но это сразу к двум применит стрелкам. Если мы хотим применить сво-ва только к одной, то
+.bx-wrapper .bx-controls-direction .bx-next.disabled{
+    background: url("images/slider1strltkpravoser.png") no-repeat;
+    cursor: none;
+
+Здесь мы поменяли цвет стрелки на серый
+
+
+

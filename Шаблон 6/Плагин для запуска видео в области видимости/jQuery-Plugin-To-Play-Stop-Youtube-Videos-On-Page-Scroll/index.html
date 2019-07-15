@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Inview Autoplay Plugin Demo</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<style>
+body { background-color:#333; color:#fff;}
+h2 { margin:30px auto 1500px auto; text-align:center;}
+.container { margin:150px auto; max-width:600px;}
+</style>
+</head>
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+
+
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div class="container">
+<h1>YouTube Inview Autoplay Plugin Demo</h1>
+<h2>Scroll Down The Webpage</h2>
+<div class="youtube-video"
+     id="demo-1"
+     data-video-id="ptJWKnQmPWI"
+     width="560"
+     height="315"></div>
+</div>
+<script src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="jquery.inview.min.js"></script>
+
+<script src="jquery.youtube-inview-autoplay.js"></script>
+<script>
+// Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  function onYouTubeIframeAPIReady() {
+    $('.youtube-video').inViewAutoplay({
+      autohide: 1,
+      modestbranding: 1,
+      rel: 0,
+      quality: 'hd720'
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+document.onkeydown = function checkKeycode(event)
+    {
+        var keycode;
+        if(!event) var event = window.event;
+        if (event.keyCode) keycode = event.keyCode; // IE
+        else if(event.which) keycode = event.which; // all browsers
+        alert("keycode: "+keycode);
+    }

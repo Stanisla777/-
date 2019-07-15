@@ -1,0 +1,8 @@
+<style>
+
+#block-new30 input.input{font-family: open sans,sans-serif; !important; font-weight:100 !important;}
+	#block-new30 input::-webkit-input-placeholder {font-family: open sans,sans-serif !important; font-weight:100 !important;}
+	#block-new30 input:-moz-placeholder {font-family: open sans,sans-serif !important; font-weight:100 !important;}
+	#block-new30 input:-ms-input-placeholder {font-family: open sans,sans-serif !important; font-weight:100 !important;}
+
+</style>

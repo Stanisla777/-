@@ -1,0 +1,166 @@
+<body>
+
+
+<div class="modal-window">
+
+    <div class="modal-window__container">
+        <div class="close-menu">x</div>
+        <div class="modal-window__header">
+            <p class="modal-window__title">
+                Врямя которого нет
+            </p>
+            <div class="modal-window__time">
+                <span style="margin-right: 5px;" class="span-date">10.09.18</span>
+                <span class="span-time">14:32</span>
+            </div>
+
+        </div>
+
+        <div class="modal-window__body">
+            <div class="modal-window__wrapper">
+                <div style="background-image: url('img/news1.jpg')" class="modal-window__img"></div>
+                <p>
+                    Врямя которого нет Врямя которого нет Врямя которого нет Врямя которого нет
+                    Врямя которого нет Врямя которого нет Врямя которого нет Врямя которого нет
+                    Врямя которого нет Врямя которого нет Врямя которого нет Врямя которого нет
+                    Врямя которого нет Врямя которого нет Врямя которого нет Врямя которого нет
+                    Врямя которого нет Врямя которого нет Врямя которого нет Врямя которого нет
+                </p>
+            </div>
+
+        </div>
+
+        <div class="modal-window__footer">
+            <div class="modal-window__button">Закрыть</div>
+        </div>
+
+    </div>
+</div>
+<div id="lean_overlay"></div>
+
+<div class="modal-window">
+
+    <div class="modal-window__container">
+        <div class="close-menu">x</div>
+        <div class="modal-window__header">
+            <p class="modal-window__title">
+                Врямя которого нет
+            </p>
+        </div>
+
+        <div class="modal-window__body">
+        </div>
+
+        <div class="modal-window__footer">
+            <div class="modal-window__button">Закрыть</div>
+        </div>
+
+    </div>
+</div>
+<div id="lean_overlay"></div>
+
+......
+
+</body>
+
+/*Стили*/
+
+#lean_overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.modal-window {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*display: flex;*/
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+  z-index: 1100;
+  display: none;
+}
+.modal-window__container {
+  position: relative;
+  width: 50%;
+  min-width: 350px;
+  background: #fff;
+}
+.modal-window__header {
+  display: flex;
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px solid #e9ecef;
+}
+.modal-window__title {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.modal-window__body {
+  padding: 10px;
+}
+
+}
+.modal-window__footer {
+  border-top: 1px solid #e9ecef;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-window__button {
+  font-size: 16px;
+  margin-left: auto;
+  border: 1px solid #e9ecef;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+}
+.modal-window__button:hover {
+  box-shadow: 0 0 1px 1px #e9ecef;
+}
+.close-menu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  z-index: 25;
+}
+
+
+/*js*/
+
+$('.js-button-news').on('click',function(e){//Открываю модально окно по клику
+
+    e.preventDefault();
+    $('.modal-window').css('display','flex');
+    $('#lean_overlay').show();//фон затемнение
+});
+
+$('.close-menu, .modal-window__button').on('click',function(){//Закрываю модальное окно по клику на крестик
+    $('.modal-window').css('display','none');
+    $('#lean_overlay').hide();
+});
+
+
+$('.modal-window').on('click', function (e) {//Закрываю модальное окно по клику рабочей области
+    $('.modal-window').css('display', 'none');
+    $("#lean_overlay").hide();
+}).on('click', '.modal-window__container', function (e) {//Запрещаю закрывать окно по клику на само молдальное окно
+    e.stopPropagation();
+
+});
+
+
+

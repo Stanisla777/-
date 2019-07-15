@@ -1,0 +1,3 @@
+<script>
+    $(document).ready(function(){var offset=$('#fixed').offset();var topPadding=300;$(window).scroll(function(){if($(window).scrollTop()>offset.top){$('#fixed').stop(0).animate({marginTop:$(window).scrollTop()-offset.top+topPadding});}else{$('#fixed').stop(0).animate({marginTop:-200});}});});
+</script>

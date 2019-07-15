@@ -1,0 +1,172 @@
+Выше находится css файл с анимашками. Выбирать названия той или иной анимации можно здесь
+
+https://daneden.github.io/animate.css/
+
+Ещё текстовые файлы с адресами страниц анимашек. Можно зайти на сайт и в консоле выбрать анимашку. Разберешься
+
+Выбираем из стилей нужную анимашку и подключаем к себе, чтобы не скачивать всю. А в чем суть да дело со стилем @keyframes подробно описаны на сайте
+https://html5book.ru/css3-animation/
+либо в моём файле
+Пример css
+Как видим блоку изначально задается opacity:0, которое потом изменяется. Но анимироваться может и другое свойство, поэтому будь внимателен
+
+.wrapper-about-us-advantage{
+    opacity: 0;
+    max-width: 325px;
+}
+
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    -webkit-animation-duration: 2s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count:1;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+Далее скрипт, самописный. Анимашка начинается, когда элемент полностью появляется на экране.
+
+var windowHeight = $(window).height();
+
+$(document).on('scroll', function () {
+    $('.wrapper-about-us-advantage').each(function () {
+        var self = $(this);
+        height = self.offset().top + self.height();
+        if ($(document).scrollTop() + windowHeight >= height) {
+            $(self).addClass('zoomIn');//просто подключаю класс с анимашкой
+        }
+    });
+})
+
+
+А это мною усовершенствоваванный скрипт, где нужно будет только подставлять блок и выбирать стиль
+
+
+ 1 вариант переменные передаем объктом obj, тоесть передаем
+ {elem: ".wrapper-about-us-advantage", anim_class: "box"}
+
+var windowHeight = $(window).height();
+
+function Animat (obj){
+    this.elem = obj.elem;
+    this.anim_class = obj.anim_class;
+    var that = this;
+    this.method = function(){
+
+        $(document).on('scroll', function() {
+            $(that.elem).each(function() {
+                var self = $(this);
+                height = self.offset().top + self.height();
+                if ($(document).scrollTop() + windowHeight >= height) {
+                    $(self).addClass(that.anim_class);
+                }
+            });
+        });
+
+    };
+    that.method();//вызываю функцию внутри класса, чтобы сразу её и выполнять
+}
+
+
+//анимация над первой группой блоков
+new Animat({
+    elem:".wrapper-about-us-advantage",
+    anim_class:'box'
+});
+
+//анимация над второй группой блоков
+new Animat({
+    elem:".wrapper-another-advantage",
+    anim_class:'zoomIn'
+});
+
+
+
+///////////2 варинт переменные передем как в функции//////////////////////////////////////////
+
+var windowHeight = $(window).height();
+
+function Animat (elem,anim_class){
+    this.elem = elem;
+    this.anim_class = anim_class;
+    var that = this;
+    this.method = function(){
+
+        $(document).on('scroll', function() {
+            $(that.elem).each(function() {
+                var self = $(this);
+                height = self.offset().top + self.height();
+                if ($(document).scrollTop() + windowHeight >= height) {
+                    $(self).addClass(that.anim_class);
+                }
+            });
+        });
+    };
+    that.method();//вызываю функцию внутри класса, чтобы сразу её и выполнять
+}
+
+var anim_1 = new Animat('.wrapper-about-us-advantage','box');
+var anim_2 = new Animat('.wrapper-another-advantage','zoomIn');
+
+
+
+А здесь, чтобы анимашки с блоками происходили всегда, когда они скроются с экрана и снова появятся
+
+function Animat (obj){
+    this.elem = obj.elem;
+    this.anim_class = obj.anim_class;
+    var that = this;
+    this.method = function(){
+
+        $(document).on('scroll', function() {
+            $(that.elem).each(function() {
+                var self = $(this);
+                height = self.offset().top + self.height();
+                height_2 = self.height();
+                if ($(document).scrollTop() + windowHeight >= height) {
+                    $(self).addClass(that.anim_class);
+                }
+
+                if ( $(window).scrollTop() >=$(self).offset().top+height_2||$(document).scrollTop() + windowHeight+height_2<= height)  {
+                    $(self).removeClass(that.anim_class)
+
+                }
+
+            });
+        });
+
+    };
+    that.method();//вызываю функцию внутри класса, чтобы сразу её и выполнять
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

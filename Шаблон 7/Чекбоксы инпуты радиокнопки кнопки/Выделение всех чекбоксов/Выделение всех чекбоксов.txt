@@ -1,0 +1,24 @@
+<form action="#">
+    <h2>Группа 1</h2>
+    <input type="checkbox" class="all" data-id="d1" title="Выбрать все"/>Общий<br/>
+    <input type="checkbox" class="one" data-id="d1" title="Выбрать"/><br/>
+    <input type="checkbox" class="one" data-id="d1" title="Выбрать"><br/>
+    <input type="checkbox" class="one" data-id="d1" title="Выбрать"/>
+</form>
+
+<script>
+
+    $(document).ready(function() {
+        $(".all").on("change", function() {
+            var groupId = $(this).data('id');
+            $('.one[data-id="' + groupId + '"]').prop("checked", this.checked);
+        });
+
+        $(".one").on("change", function() {
+            var groupId = $(this).data('id');
+            var allChecked = $('.one[data-id="' + groupId + '"]:not(:checked)').length == 0;
+            $('.all[data-id="' + groupId + '"]').prop("checked", allChecked);
+        });
+    });
+
+</script>

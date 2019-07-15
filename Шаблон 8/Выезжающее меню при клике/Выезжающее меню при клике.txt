@@ -1,0 +1,35 @@
+.nav-bar{
+   position: absolute;
+   left: -220px;
+}
+
+$(".menu-open-left").click(function(){
+        if ($(".nav-bar").offset().left<0) $(".nav-bar").animate({left:0},500);
+        else $(".nav-bar").animate({left:-220},500);
+    });
+
+
+А вот ещё
+
+Это особенно актуально, когда у нас меню выплывает с права
+
+<div class="js-col-right col-right"></div>
+
+.col-right{
+        position: absolute;
+        right: -220px;
+    }
+
+$(".menu-open-right").click(function(){
+        if ($(".js-col-right").hasClass('col-right')) {
+            $(".col-right").animate({right:0},500);
+            $('.main-content').css('opacity','0.2');
+            $(".col-right").removeClass("js-col-right")
+
+        }
+        else {
+            $(".col-right").animate({right:-220},500);
+            $('.main-content').css('opacity','1');
+            $(".col-right").addClass("js-col-right")
+        }
+    });

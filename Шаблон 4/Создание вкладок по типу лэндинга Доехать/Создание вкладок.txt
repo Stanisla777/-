@@ -1,0 +1,13 @@
+
+
+Что  такое bootstrap писать не буду, всё есть здесь
+http://dedushka.org/uroki/6901.html
+
+Сам фрэймворк можно скачать тут
+http://getbootstrap.com/customize/?id=33a7d0da31b0d213f53df04f7d3f2537
+
+Про вкладки тут. Копируй всё и изменяй с помощью стилей.
+http://itchief.ru/lessons/bootstrap-3/100-bootstrap-3-dynamic-tabs
+
+и тут ещё
+http://dedushka.org/uroki/9632.html

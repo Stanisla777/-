@@ -1,0 +1,57 @@
+Блоки расположены в одну линию по принципу карточек товара.
+
+
+<div class="wrapper-product-line">
+
+ <div class="product-card"></div>
+ <div class="product-card"></div>
+ <div class="product-card"></div>
+ <div class="product-card"></div>
+
+</div>
+
+
+.size(@n,@mar){//размер блока
+  @atom:100% / 12 * @n;//переменная в которую запишем размер отдельной ячейки
+  width: calc(@atom - @mar);
+}
+
+.md-block(@content,@size){
+  @media screen and (max-width: @size){
+    @content()
+  }
+}
+
+.wrapper-product-line{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px -15px 0;//отрицательный margin, чтобы боковые компенсировать margin боковых блоков
+  justify-content: center;
+}
+.product-card{
+
+  min-width: 230px;
+  max-width: 33%;//сделано, чтобы карточки были не особо бодьшие, но и чтобы все правильно вставало.
+  margin: 0 15px 30px;
+
+  .size(3,30px);
+
+  .md-block({
+    .size(6,30px);
+  },1060px);
+
+
+  .md-block({
+    .size(12,30px);
+    max-width: 90%;
+  },540px);
+
+
+}
+
+
+
+
+
+
+

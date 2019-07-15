@@ -1,0 +1,15 @@
+Сам плагин находится по адресу:
+
+http://media.lpgenerator.ru/uploads/images/countstas.js
+
+Адрес сайта с исходниками:
+http://smartlanding.biz/kak-podklyuchit-schetchik-obratnogo-otscheta-vremeni-na-sajt.html
+
+Все css настройки находятся внутри самого плагина.
+В html пишется лишь:
+<div class="countbox"></div>
+
+Картикни для плашек под цифры, разделители цифр нужно заранее подобрать.
+Часы минуты секунды вставлял отдельно divами.
+
+А так все описания даны в файле css. Название файла: 

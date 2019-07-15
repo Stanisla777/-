@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bxslider test</title>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="http://yandex.st/jquery/fancybox/2.1.4/jquery.fancybox.css"/>
+<script src="http://yandex.st/jquery/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script>jq_181 = jQuery.noConflict(true);</script>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="css.css">
+<link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="bxslider1container">
+<div id="bxslider1">
+<ul class="bxslider1">
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-01.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-01.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-02.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-02.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-03.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-03.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-04.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-04.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-05.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-05.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-06.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-06.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-07.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-07.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-08.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-08.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-09.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-09.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-10.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-10.jpg"></a>
+    </li>
+    <li>
+        <a rel="fancyslide" href="http://media.lpgenerator.ru/images/130357/oboi-slider2-full-11.jpg"><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-11.jpg"></a>
+    </li>
+ </ul>
+</div>
+</div>
+
+
+<div id="bx-pager">
+  <a data-slide-index="0" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-01.jpg" /></a>
+  <a data-slide-index="1" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-02.jpg" /></a>
+  <a data-slide-index="2" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-03.jpg" /></a>
+  <a data-slide-index="3" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-04.jpg" /></a>
+  <a data-slide-index="4" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-05.jpg" /></a>
+  <a data-slide-index="5" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-06.jpg" /></a>
+  <a data-slide-index="6" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-07.jpg" /></a>
+  <a data-slide-index="7" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-08.jpg" /></a>
+  <a data-slide-index="8" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-09.jpg" /></a>
+  <a data-slide-index="9" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-10.jpg" /></a>
+  <a data-slide-index="10" href=""><img src="http://media.lpgenerator.ru/images/130357/oboi-slider2-small-11.jpg" /></a>
+</div>
+
+<script>
+jq_181(function($) {
+
+$('.bxslider1').bxSlider({
+    mode: 'horizontal',
+    speed: 400,
+    controls: true,
+    pagerCustom: '#bx-pager',
+    auto: true,
+    pause: 3500,
+    autoHover: true
+});
+
+$('a[rel="fancyslide"]').fancybox({
+        'href' : this.href,
+        'overlayShow' : true,
+        'centerOnScroll' : true,
+        'speedIn' : 100,
+        'speedOut' : 50,
+        'padding' : 5
+    });
+
+});
+</script>
+</body>
+</html>

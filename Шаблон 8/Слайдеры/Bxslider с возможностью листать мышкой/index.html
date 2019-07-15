@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!--<link rel="stylesheet" href="css/jquery.bxslider.css">-->
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="wrapper-slider">
+        <div class="bxslider">
+            <div class="wrapper-slide">
+                <img src="https://www.thisisf1.com/wp-content/uploads/2017/01/Michael-Schumacher-en-2006_max1024x768.jpg" alt=""/>
+                <div class="wrapper-slide-description">
+                    <h3>Lorem Ipsum is simply dummy text of</h3>
+                    <p>We work with investors to make managing your investments easy!</p>
+                </div>
+            </div>
+            <div class="wrapper-slide">
+                <img src="http://freshnews.pro/wp-content/uploads/ayrton-senna_fn.jpg" alt=""/>
+                <div class="wrapper-slide-description">
+                    <h3>Lorem Ipsum is simply dummy text of</h3>
+                    <p>Lorem Ipsum is simply dummy!</p>
+                </div>
+            </div>
+            <div class="wrapper-slide">
+                <img src="http://s019.radikal.ru/i632/1302/89/1d515add244f.jpg" alt=""/>
+                <div class="wrapper-slide-description">
+                    <h3>Lorem Ipsum is simply dummy text of</h3>
+                    <p>We work with investors to make managing your investments easy!</p>
+                </div>
+            </div>
+            <div class="wrapper-slide">
+                <img src="http://www.motorsportretro.com/wp-content/uploads/2011/06/Fangio_1976_USA.jpg" alt=""/>
+
+                <div class="wrapper-slide-description">
+                    <h3>Lorem Ipsum is simply dummy text of</h3>
+                    <p>We work with investors to make managing your investments easy!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+
+        $('.wrapper-slider .bxslider').bxSlider({
+            mode:"horizontal",
+            slideMargin:10,
+            adaptiveHeight:true,
+            controls: true,
+            pager: true,
+            nextText:"",
+            prevText:"",
+            onSliderLoad: function(){//чтобы стрелочки были по середине
+                var width = $(".wrapper-slider .bx-pager").width();
+                $(".wrapper-slider .bx-pager").css('marginLeft',-width/2);
+                $('.wrapper-slider .wrapper-slide').css('display','block');
+            },
+            minSlides:2,
+            maxSlides:2,
+            slideWidth:350
+//
+        });
+
+
+    });
+</script>
+
+
+
+
+</body>
+</html>

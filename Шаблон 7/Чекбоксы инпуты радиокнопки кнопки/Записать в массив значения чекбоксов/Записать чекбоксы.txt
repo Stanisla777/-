@@ -1,0 +1,8 @@
+var arr_3 = [];
+
+ $('#tab-test-product3 input[type="checkbox"]:checked').each(function() {arr_3.push($(this).val().replace(/\s/ig, '_'));});
+
+  
+  var loginData = {              
+  eat2: arr_3
+};

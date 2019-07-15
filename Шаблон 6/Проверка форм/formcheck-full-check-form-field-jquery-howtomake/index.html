@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if IE 7 ]><html class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><html> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Formcheck.js - полная проверка полей формы перед отправкой с помощью jQuery - Howtomake</title>
+	
+	<link type="text/css" rel="stylesheet" href="style.css" media="all" />
+	
+</head>
+
+<body>
+
+<div id="header">
+	<h1><a href="http://www.howtomake.com.ua/"><span class="how">How</span><span class="to">To</span><span class="make">Make</span></a> <span class="demo">&rarr; demo</span></h1>
+	<a class="back" href="http://www.howtomake.com.ua/front/formcheck-jquery-full-check-form-field.html/">&raquo; back to article</a>
+</div>
+
+<div id="main">
+
+	<h1>Formcheck.js - полная проверка полей формы перед отправкой с помощью jQuery</h1>
+	
+	<div class="form_box">
+		
+		<form action="#" method="post" class="form_check form_style">
+      
+      <p class="rline">
+        <label for="user_name">Имя пользователя:</label>
+        <input type="text" class="rfield" id="user_name" />
+      </p>
+      <p class="rline">
+        <label for="user_family">Фамилия пользователя</label>
+        <input type="text" class="rfield" id="user_family" />
+      </p>
+      <p class="rline">
+        <label for="user_mail">Email пользователя</label>
+        <input type="text" class="rfield mailfield" id="user_mail" />
+      </p>
+      <p class="rline">
+        <label for="user_phone">Телефон пользователя:</label>
+        <input type="text" class="rfield phonefield" id="user_phone" />
+      </p>
+      <p class="rline">
+        <label for="user_work">Профессия пользователя:</label>
+        <input type="text" class="rfield" id="user_work" />
+			</p>
+      <p class="rline rcheck">
+        <input type="checkbox" class="rfield" id="check_1" />
+        <label for="check_1">Я прочитал условия лицензионного соглашения</label>
+      </p>
+      <p class="rline rcheck">
+        <input type="checkbox" class="rfield" id="check_2" />
+        <label for="check_2">Я согласен на все!</label>
+      </p>
+      
+			<button type="submit" class="btnsubmit">Отправить данные</button>
+			
+		</form>
+		
+	</div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="is.mobile.js"></script>
+<script src="jquery.maskedinput.min.js"></script>
+<script src="formcheck.js"></script>
+
+</body>
+</html>

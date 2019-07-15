@@ -1,0 +1,6 @@
+
+
+            $('#knopkarasschitat').click(function(event){
+            event.preventDefault();
+            $('html, body').animate({ scrollTop: $('#ostavnezayavku').offset().top-+30}, 500);
+       		});

@@ -1,0 +1,2 @@
+    var height = $(".main").height();    /*Родительский блок*/
+    $(".col-left").height(height);

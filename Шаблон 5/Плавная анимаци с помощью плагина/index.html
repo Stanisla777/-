@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Документ без названия</title>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	$('#eff_1').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500);
+		return false;
+	});
+	$('#eff_2').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500, 'easeInOutCubic');
+		return false;
+	});
+	$('#eff_3').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500, 'easeInOutExpo');
+		return false;
+	});
+	$('#eff_4').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500, 'easeInOutCirc');
+		return false;
+	});
+	$('#eff_5').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500, 'easeInOutElastic');
+		return false;
+	});
+	$('#eff_6').click(function(){
+		$('#block').removeAttr('style');
+		$('#block').animate({width: '300px', height: '300px'}, 1500, 'easeInOutBounce');
+		return false;
+	});
+
+});
+</script>
+<style>
+body{
+	padding:40px;
+	font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+	font-size:12px;	
+}
+
+#block{
+	width:200px;
+	height:200px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-100px 0 0 -100px;
+	background:#333;
+	border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<a href="#" id="eff_1">Просто анимация</a> | 
+<a href="#" id="eff_2">easeInOutCubic</a> | 
+<a href="#" id="eff_3">easeInOutExpo</a> | 
+<a href="#" id="eff_4">easeInOutCirc</a> | 
+<a href="#" id="eff_5">easeInOutElastic</a> | 
+<a href="#" id="eff_6">easeInOutBounce</a> | 
+
+<div id="block"></div>
+
+
+</body>
+</html>

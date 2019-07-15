@@ -1,0 +1,20 @@
+/*‘ормы отправки*/
+
+    $('[name=tel]').bind("change keyup input click", function() {
+        if (this.value.match(/[^0-9\(\)\+\s]/g)) {
+            this.value = this.value.replace(/[^0-9\(\)\+\s]/g, '');
+        }
+    });
+
+    $('[name=name]').bind("change keyup input click", function() {
+        if (this.value.match(/[^а-€ј-яa-zA-Z\s\"\'\0-9\.\,]/g)) {
+            this.value = this.value.replace(/[^а-€ј-яa-zA-Z\s\"\'\0-9\.\,]/g, '');
+        }
+    });
+
+
+    $('[name=email]').bind("change keyup input click", function() {
+        if (this.value.match(/[^а-€ј-яa-zA-Z\s\"\'\0-9\.\,\@]/g)) {
+            this.value = this.value.replace(/[^а-€ј-яa-zA-Z\s\"\'\0-9\.\,\@]/g, '');
+        }
+    });

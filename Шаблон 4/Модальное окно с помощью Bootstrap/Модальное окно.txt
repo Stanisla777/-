@@ -1,0 +1,15 @@
+Оказывыается модальное окно можно сделать красивым. И в этом помогает Bootstrap.
+
+Что это такое писать не буду, всё есть здесь
+http://dedushka.org/uroki/6901.html
+
+Сам фрэймворк можно скачать тут
+http://getbootstrap.com/customize/?id=33a7d0da31b0d213f53df04f7d3f2537
+
+Про модальные окна тут. Копируй всё и изменяй с помощью стилей.
+http://itchief.ru/lessons/bootstrap-3/bootstrap-3-modal-window
+
+и тут ещё
+http://dedushka.org/uroki/9542.html
+
+ 

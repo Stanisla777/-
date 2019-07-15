@@ -1,0 +1,81 @@
+Эффект, когда одна секция наезжает на другую
+
+Скрипт писал сам, он конечно изощренный, но ничего лучше не придумал.
+
+Например у нас есть пять секций. Напишем для примера 2
+Помещаем их в контейнер
+
+
+<div class="blokmain blok-parallaks">
+
+   <section class="blokmain blok1main">
+       <div class="blok blok1">
+             ......
+       </div>
+   </section>
+
+   <section class="blokmain blok2main">
+       <div class="blok blok2">
+             ......
+       </div>
+   </section>
+
+</div>
+
+В стилях обертке ставим клиссическую высоту через padding-top. Блокам секций мы прописываем абсолютное позиционирование. И внутреннему блоку ставим фиксированную высоту. Следующую секцию мы опускаем на высоту блока предыдущего и так далее
+.blok-parallaks{
+    padding-bottom: 1516px;
+}
+
+.blok1main{
+    position: absolute;
+    background: url("images/fonslider1.png") no-repeat center;
+}
+.blok7{
+    height: 490px;
+}
+.blok2main{
+    position: absolute;
+    background: url("images/foparking.png") no-repeat center;
+    top: 489px;
+}
+.blok8{
+    height: 503px;
+
+
+
+Далее скрипт. В качестве отчета брем элемент, который находится под всеми паралаксирующими элементами. И первой от первой секции до элемента становится столько-то(а это расстояние понятное дело равно сумме высот всех секций), то первая секция получает фиксированное позиционирование. Else срабатывает пока расстояние меньше этому расстоянию, если вдруг человек начинает скролить обратно. И точно также со следующими секциями, где только будет уменьшаться расстояние от секии до контрольной точки
+
+ $(window).scroll(function(){ $(window).scroll(function(){
+
+        if ($(window).scrollTop()>= $('.blok10main').offset().top-1517){
+
+            $(".blok7main").css({"position":"fixed", "top":"0px"});
+        }
+        else if ($(window).scrollTop()<$('.blok10main').offset().top-1517){
+
+            $(".blok7main").css({"position":"absolute"});
+        };
+
+
+        if ($(window).scrollTop()>= $('.blok10main').offset().top-1027){
+
+            $(".blok8main").css({"position":"fixed", "top":"0px"});
+        }
+        else if ($(window).scrollTop()<$('.blok10main').offset().top-1027){
+
+            $(".blok8main").css({"position":"absolute", "top":"489px"});
+        };
+
+}); 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+$(document).ready(function() {
+
+    // ”станавливаем минимальное значение высоты левого меню
+    $(".col-left").css({"min-height": $(".col-left").height()});
+
+    // ќбновл¤ем размеры левого меню
+    resizeWindow();
+    jQuery(window).resize(function() {
+        resizeWindow();
+    });
+
+});
+
+/**
+ * »зменение размеров левого меню (подгон под высоту)
+ */
+function resizeWindow() {
+    $(".col-left").css({"height": 0});
+    $(".col-left").css({"height": $(document).height()});
+}

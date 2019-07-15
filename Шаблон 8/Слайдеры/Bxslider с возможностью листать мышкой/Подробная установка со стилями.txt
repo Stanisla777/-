@@ -1,0 +1,146 @@
+
+
+Слайдер заворачиваем в контейнер.
+<div class="wrapper-slider">
+    <div class="bxslider">
+        <div class="wrapper-slide">
+            <img src="assets/img/SliderImg.jpg" alt=""/>   
+        </div>
+        <div class="wrapper-slide">
+            <img src="assets/img/SliderImg.jpg" alt=""/>            
+        </div>
+        <div class="wrapper-slide">
+            <img src="assets/img/SliderImg.jpg" alt=""/>            
+        </div>
+        <div class="wrapper-slide">
+            <img src="assets/img/SliderImg.jpg" alt=""/>
+        </div>
+        <div class="wrapper-slide">
+            <img src="assets/img/SliderImg.jpg" alt=""/>
+        </div>
+    </div>
+</div>	
+
+В стили записываем:
+
+Все стили в файле
+
+Для того, чтобы кнопках использовать иконски стрелок из fontawesome
+, естесвенно он должен быть подключен
+
+.footer-slider .bx-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    /*text-indent: -9000px;*/  //это надо убрать или закоментировать
+    z-index: 100;
+    font-size: 17px;
+    background: #6f97af;
+    color: #fff;
+}
+
+.footer-slider .bx-prev:before{
+    content: "\f060";
+    font-family: FontAwesoome,sans-serif;
+    font-size: 12px;
+}
+
+
+
+А при вызове пейджерам задать пустоту
+$('.footer-slider .bxslider').bxSlider({
+    mode:"horizontal",
+    controls:true,
+    nextText:"",
+    prevText:""
+});
+
+
+$('.wrapper-slider .bxslider').bxSlider({
+    mode:"horizontal",
+    slideMargin:10,
+    adaptiveHeight:true,
+    controls: true,
+    pager: true,
+    nextText:"",
+    prevText:"",
+    onSliderLoad: function(){//чтобы стрелочки были по середине
+        var width = $(".wrapper-slider .bx-pager").width();
+        $(".wrapper-slider .bx-pager").css('marginLeft',-width/2);
+        $('.wrapper-slider .wrapper-slide').css('display','block');
+    },
+    minSlides:2,
+    maxSlides:2,
+    slideWidth:350
+//
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Вызов слайдера:
+
+$('.bxslider').bxSlider({
+        mode:"fade"
+    });
+
+
+Для того чтобы при загрузки слайдера он не дергался, ставим слайдам display:none, кроме первого, а после загрузки слайде меняем видимость
+
+.wrapper-slide:not(:first-child){
+    display: none;
+}
+
+onSliderLoad: function(){
+   
+    $('.wrapper-slide').css('display','block');
+}
+
+
+
+
+
+Основные настройки на сайте:
+http://fot-tof.ru/Funkcional_nyj_slajder_bxSlider.htm
+
+
+
+
+Свойсва полезные:
+infiniteLoop: false(true) - при достижении послежнего слайда, останавливается. Если true - зацикливается
+
+hideControlOnEnd - будучи true, спрячет кнопку 'next' при достижении последнего слайда, и наоборот. Примечание: Используется, если infiniteLoop: false. по умолчанию: false
+Но чтобы эта штука работала надо прописать в стилях, что будет происходить со стрелками
+
+.bx-wrapper .bx-controls-direction a.disabled{
+    display: none;
+    cursor: none;
+}
+Но это сразу к двум применит стрелкам. Если мы хотим применить сво-ва только к одной, то
+.bx-wrapper .bx-controls-direction .bx-next.disabled{
+    background: url("images/slider1strltkpravoser.png") no-repeat;
+    cursor: none;
+
+Здесь мы поменяли цвет стрелки на серый
+
+
+

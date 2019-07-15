@@ -1,0 +1,77 @@
+1 вариант. 
+
+—оздаем отдельные контейнеры в которых хранитс€ инфа из которой у нас будет добавл€тьс€ информаци€ или даже контент модального окна. Ќаример полезно, когда у нас несколько модальных окон с различным содержанием.
+
+<div class="wrapper-item">
+    <div data-about="lorem1" class="items">ѕервое задание</div>
+    <div data-about="lorem2" class="items">¬торое задание</div>
+</div>
+
+<div class="wrappers-modal-pop-up" data-about="lorem1">
+    <div class="wrapper-pop-up">
+        <p>Lorem1 Lorem1 Lorem1 Lorem1 Lorem1</p>
+        <p>Lorem1 Lorem1 Lorem1 Lorem1 Lorem1</p>
+    </div>
+</div>
+
+<div class="wrappers-modal-pop-up" data-about="lorem2">
+    <div class="wrapper-pop-up">
+        <p>Lorem2 Lorem2 Lorem2 Lorem2 Lorem2 </p>
+        <p>Lorem2 Lorem2 Lorem2 Lorem2 Lorem2 </p>
+    </div>
+</div>
+
+
+
+
+.wrappers-modal-pop-up{/*пр€чем в документе контейнер*/
+    display: none;
+}
+
+
+
+$('.wrapper-item .items').on('click',function(){
+    open_modal();//ќткрываю модалку
+    var data = $(this).attr('data-about');//записываем в переменную значение атрибута
+   
+
+    var q = $('.wrappers-modal-pop-up[data-about="'+data+'"]').html();//получаем содержание контейнера с data-about равным data
+    $('.parent .modal-parent').html(q) //помещаем содержание в модалку
+});
+$('.close-menu').on('click',close_modal);
+
+
+$('.parent').on('click', function (e) {//«акрываю модальное окно по клику рабочей области
+    $('.parent').css('display', 'none');
+    $("#lean_overlay").hide();
+}).on('click', '.block', function (e) {//«апрещаю закрывать окно по клику на само молдальное окно
+    e.stopPropagation();
+
+});
+
+function open_modal(){
+    $('.parent').css('display','flex');
+    $('.block').addClass('block-modal-window-medium');
+    $('#lean_overlay').show();//фон затемнение
+}
+
+function close_modal(){
+    $('.parent').css('display','none');
+    $('#lean_overlay').hide();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+Только цифры с ограничением ввода цифр до запятой и после
+
+<input type="text"  class="onlyDigits weight-input"  name="width"  id="weight-input">
+
+function onlyDigits(e) {
+          this.value = this.value.replace(/[^\d\.\,]/g, "");
+           this.value = this.value.replace(/\,/g, '.');
+
+            if(this.value.length > 1&&this.value.indexOf(".") == '-1') {
+                this.value = this.value.substr(0, 3);
+            }
+
+            if (this.value.indexOf(".") != '-1') {
+                this.value=this.value.substring(0, this.value.indexOf(".") + 3); // цифра 4, устанавливает количество цифр после запятой,
+                                                                        //т.е. если 4, то максимум 3 цифры после запятой
+            }
+
+
+            if (this.value.match(/\./g).length > 1) {
+                this.value = this.value.substr(0, this.value.lastIndexOf("."));
+            }
+
+        }
+        document.querySelector(".onlyDigits").onkeyup = onlyDigits;
+
+
+Но если будет type="number", то при вводе запрещенных символов всё будет стираться.Поэтому надо сделать так
+
+<input type="number"  class="onlyDigits weight-input"  name="width"  id="weight-input">
+
+$(function(){
+            $(".onlyDigits").keypress(function (e) {
+                if (e.which != 8 && e.which != 0 && e.which != 46  && (e.which < 48 || e.which > 57)) {
+
+                    return false;
+                }
+            });
+        });
+
+По ссылке там ещё и подсказка о том, что можно вводить только цифры
+
+https://codepen.io/ilkeryilmaz/pen/zfegk

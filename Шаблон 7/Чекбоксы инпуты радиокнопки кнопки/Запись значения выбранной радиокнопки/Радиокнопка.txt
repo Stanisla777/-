@@ -1,0 +1,1 @@
+var gender = $('#tab-gender input[type="radio"]:checked').val();

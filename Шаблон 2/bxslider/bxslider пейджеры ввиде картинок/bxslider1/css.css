@@ -1,0 +1,82 @@
+#bxslider1container {
+    display: block;
+    width: 470px;
+    height: 250px;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    padding-top: 70px;
+}
+#bxslider1 {
+    display: block;
+    width: 300px;
+    height: 190px;
+    margin: 0 auto;
+    border: 10px solid #aa7913;
+}
+.bxslider1, .bxslider1 li {
+    margin: 0;
+    padding: 0;
+}
+#bxslider1 .bx-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    *zoom: 1;
+}
+#bxslider1 .bx-wrapper img {
+    max-width: 100%;
+    display: block;
+}
+#bxslider1 .bx-wrapper .bx-viewport {
+    left: 0px;
+    /*fix other elements on the page moving (on Chrome)*/
+    
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
+#bxslider1 .bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #c0a03b;
+}
+#bxslider1 .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: #dfba46;
+}
+#bxslider1 .bx-wrapper .bx-prev {
+    left: -70px;
+    background: url(http://media.lpgenerator.ru/images/130357/oboi-slider2-left.png) no-repeat 0 -30px;
+}
+#bxslider1 .bx-wrapper .bx-next {
+    right: -70px;
+    background: url(http://media.lpgenerator.ru/images/130357/oboi-slider2-right.png) no-repeat 0 -25px;
+}
+#bxslider1 .bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 0px;
+    outline: 0;
+    width: 75px;
+    height: 190px;
+    text-indent: -9999px;
+    z-index: 999;
+}
+#bx-pager {
+    display: block;
+    width: 410px;
+}
+#bx-pager a {
+    display: inline-block;
+    padding: 1px;
+}
+
+#bx-pager img {
+    border: 1px solid #fff;
+    margin: 0;
+    padding: 0
+}
+
+#bx-pager .active img {
+    border: 1px solid #7f7f7f;
+    margin: 0;
+    padding: 0
+}

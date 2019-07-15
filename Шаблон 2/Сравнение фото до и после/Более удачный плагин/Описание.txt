@@ -1,0 +1,19 @@
+Ётот плагин более удачный, так как в нем стили дл€ ползунка прописаны в таблице стилей под названием twentytwenty. я там уже кое что убрал лишнее, и оставил только стили дл€ примера с вертикальным расположением ползунка.
+
+«деь изображени€ помещаютс€ в контейнер
+
+        <div class="twentytwenty-container">
+          <img src="img/1_1.jpg" />
+          <img src="img/1_2.jpg" />
+        </div>
+
+¬ызываетс€ плагин:
+<script>
+    $(window).load(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty	({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty	({default_offset_pct: 0.3, orientation: 'vertical'});/*ѕолоса прокрутки горизонтально*/
+    });
+</script>
+
+
+—качано с http://ruseller.com/lessons.php?id=1813&rub=32

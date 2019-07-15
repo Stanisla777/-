@@ -1,0 +1,9 @@
+Если мы хотим задать поп апу затемняющий фон с каким-то эфектом или дополнительной картинкой, но не хотим чтобы такой затемняющий фон был на других поп апах прописываем свойства затемняющего блока определенному элементу.
+
+.widget.popup.overlay { background-color: rgba( 0, 0, 0, 0.7)!important;} так выглядит затемняющий фон по умолчанию для всех блоков.
+
+А так нужно задать для определенного:
+#overlay-block-new87.widget.popup.overlay  {
+     background: url("http://media.lpgenerator.ru/images/157195/ramkascvetamidlyapopapa.png") no-repeat;
+     background-position: 233px 26px!important;
+     background-color: rgba( 0, 0, 0, 0.7)!important;

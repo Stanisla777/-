@@ -1,0 +1,33 @@
+<div id="map" style="width: 100%; height: 546px"></div>
+            <script>
+                ymaps.ready(function () {
+                    var myMap = new ymaps.Map('map', {
+                                center: [55.10895530, 36.58962517],
+                                zoom: 16
+                            }, {
+                                searchControlProvider: 'yandex#search'
+                            }),
+                            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                                hintContent: 'Собственный значок метки',
+                                balloonContent: 'Это красивая метка'
+                            }, {
+                                // Опции.
+                                // Необходимо указать данный тип макета.
+                                iconLayout: 'default#image',
+                                // Своё изображение иконки метки.
+                                iconImageHref: '../images/logo.png',
+                                // Размеры метки.
+                                iconImageSize: [50, 75],
+                                // Смещение левого верхнего угла иконки относительно
+                                // её "ножки" (точки привязки).
+                                iconImageOffset: [-3, -42]
+                            });
+
+                    myMap.geoObjects.add(myPlacemark);
+                });
+            </script>
+
+Айпишка https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/geoobjects-docpage/
+Видеопособие:http://master-css.com/page/kak-vstavit-jandeks-kartu-na-sajt-nastrojka
+
+При чем карту можно вставить и с помощью айпишки и просто войдя в конструктор карт, но там меньше возможностей 

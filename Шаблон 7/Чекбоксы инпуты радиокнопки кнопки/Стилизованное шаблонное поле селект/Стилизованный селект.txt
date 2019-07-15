@@ -1,0 +1,104 @@
+ƒл€ того, чтобы в интернете не искать стилизацию пол€ селект, например стрелочки, стилизации полей option, € разработал свой скрипт.
+
+
+<div class="wrapper-select"><!--контейнер самого селекта-->
+    <div class="wrapper-select__wrapper-input">
+        <input class="wrapper-select__input" readonly="" value="Price: Lowest first" type="text">
+        <div class="wrapper-select__triangle-down"></div>
+    </div>
+    <ul class="wrapper-select__option" style="display: none;"><!--раскрывающийс€ список-->
+        <li>Package-1</li>
+        <li>Package-2</li>
+        <li>Package-3</li>
+        <li>Package-4</li>
+        <li>Package-5</li>
+        <li>Package-6</li>
+    </ul>
+</div>
+
+
+—тили
+—тили сделаны таким образом, чтобы их можно было мен€ть в зависимости от дизайна. ≈сть общий класс wrapper-select.
+
+.section-menu__wrapper-select {
+  border: 1px solid #b7b7b7;
+}
+.section-menu__input {
+  width: 90%;
+  color: #b7b7b7;
+  height: 30px;
+}
+.section-menu__triangle-down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  border-radius: 2px;
+}
+.section-menu__option {
+  border: 1px solid #b7b7b7;
+}
+.section-menu__option li {
+  margin-bottom: 10px;
+  color: #b7b7b7;
+}
+.section-menu__option li:first-child {
+  margin-top: 10px;
+}
+
+//////////////////////////////////////////////////
+
+.wrapper-select {
+  position: relative;
+}
+.wrapper-select__wrapper-input {
+  display: flex;
+  align-items: center;
+}
+.wrapper-select__triangle-down {
+  width: 0;
+  height: 0;
+}
+.wrapper-select__input {
+  
+  border: none;
+  padding-left: 10px;
+}
+.wrapper-select__option {
+  padding-left: 10px;
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.wrapper-select__option li {
+  cursor: pointer;
+}
+
+ƒжава скрипт
+
+$('.wrapper-select__triangle-down, .wrapper-select').on('click',function(){
+
+
+    $(this).find('.wrapper-select__option').slideToggle();
+});
+
+$('.wrapper-select__option li').on('click',function(){
+    var val = $(this).text();
+    $(this).parents('.wrapper-select').find('.wrapper-select__input').val(val);
+    $(this).find('.wrapper-select__option').slideUp();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

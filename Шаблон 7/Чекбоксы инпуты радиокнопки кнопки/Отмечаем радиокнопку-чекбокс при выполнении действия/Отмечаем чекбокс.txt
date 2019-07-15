@@ -1,0 +1,5 @@
+Для того, чтобы выделить чекбокс нужно:
+
+$("button").click(function({
+   $("checkbox").prop("checked","checked")
+}))

@@ -1,0 +1,98 @@
+Чтобы сделать например меню, которое всегда остается например при прокрутке страницы.
+Делаем блок, в него добавляем нуужные элементы.
+Смотрим индентификатор блока.
+Добавляем этот скрипт  меняем нужный нам идентификатор облока и вуаля.
+
+<script>
+    jq_144(function($) {
+        $(document).ready(function() {
+      
+      
+            var sm_bg_block = "#block-new12"; //идентификатор основной панели меню
+            var sm_gap = 10; //сдвиг меню (в пикселях) от верней границы окна
+            var sm_shift = 0; //сдвиг меню (в пикселях) по горизонтали относительно центра экрана
+            
+            
+            
+    /* Для корректной работы menu дальнейший код изменять не рекомендуется    */
+            
+            var sm_menu = "";
+            var sm_x_crd = [];
+            var sm_y_crd = [];
+            var sm_bg_top, sm_bg_left, sm_bg_bot, sm_bg_right, sm_bg_zi;
+            var sm_i = 0;
+            var sm_x = 0;
+            var sm_y = 0;
+            var sm_bg_w = 0;
+            
+            sm_bg_zi = parseInt($(sm_bg_block).css("z-Index"));
+            sm_bg_top = parseInt($(sm_bg_block).css('top'));
+            sm_bg_left = parseInt($(sm_bg_block).css('left'));
+            sm_bg_right = sm_bg_left + $(sm_bg_block).width();
+            sm_bg_bottom = sm_bg_top + $(sm_bg_block).height();
+      
+            $('div').each(function()
+            {
+                    if (
+                    (sm_bg_zi<parseInt($(this).css("z-Index"))) &&
+                    (sm_bg_top<parseInt($(this).css('top'))) &&
+                    (sm_bg_left<parseInt($(this).css('left'))) &&
+                    (sm_bg_right>(parseInt($(this).css('left'))+$(this).width()) &&
+                    (sm_bg_bottom>(parseInt($(this).css('top'))+$(this).height())))
+                    )      
+                    {
+                            sm_menu += ("#"+$(this).attr('id')+", ");
+                    }
+            });
+      
+            sm_menu = sm_menu.substring(0, sm_menu.length-2);
+      
+            $(sm_bg_block).css('position','fixed');
+            $(sm_bg_block).css('z-index',parseInt($(sm_bg_block).css('z-index'))+500);
+            $('body').append($(sm_bg_block));
+            $(sm_menu).each(function()
+            {
+                    $(this).css('position','fixed');
+                    $(this).css('z-index',parseInt($(this).css('z-index'))+500);                    
+                    $('body').append($(this));
+            });                  
+        
+            sm_bg_top = $(sm_bg_block).position().top;                
+            sm_bg_left = $(sm_bg_block).position().left;                
+                        
+            $(sm_menu).each(function()
+            {
+                    sm_x_crd[sm_i] = $(this).position().left - sm_bg_left;
+                    sm_y_crd[sm_i] = $(this).position().top - sm_bg_top;
+                    sm_i++;    
+            });
+            
+            sm_bg_w = $(sm_bg_block).width();
+            sm_y = sm_gap;
+            sm_i = 0;
+      
+            $(sm_menu).each(function()
+            {
+                    $(this).css('top', sm_y + sm_y_crd[sm_i]);
+                    sm_i++;
+            });
+            $(sm_bg_block).css('top',sm_y);
+      
+            $(window).resize(function()
+            {
+                    sm_i = 0;
+                    sm_x = ($(window).width() - sm_bg_w)/2 + sm_shift;                
+                    $(sm_bg_block).css('left',sm_x);      
+                    $(sm_menu).each(function()
+                    {
+                            $(this).css('left', sm_x + sm_x_crd[sm_i]);
+                            sm_i++;
+                    });
+                    
+            });              
+            $(window).resize();
+            
+            });
+    });
+      
+    </script>

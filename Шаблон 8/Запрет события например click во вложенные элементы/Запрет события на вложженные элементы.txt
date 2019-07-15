@@ -1,0 +1,10 @@
+$('.parent').on('click', function (e) {
+            $('.parent').css('display', 'none');
+            $("#lean_overlay").hide();
+        }).on('click', '.block', function (e) {
+            e.stopPropagation();
+
+        });
+
+
+Ключевая строка e.stopPropagation();

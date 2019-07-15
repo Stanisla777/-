@@ -1,0 +1,59 @@
+http://mel0ne.ru/2016/09/16/owl-carousel-2/
+
+https://www.brekot.ru/blog/owl-carousel-2-answer/
+
+
+Как управлять событиями.
+
+Возможно не до конца разобрался, но некоторыми событиями можно так:
+
+
+Вешаем на событие on
+
+var owl = $(".owl-carousel");
+
+Когда перелистываем вызываем alert
+
+owl.on('changed.owl.carousel', function(event) {
+    alert("Привет")
+})
+
+Другие так
+
+При инициализации слайдера вызываем alert
+owl.owlCarousel({
+    items:3,
+    margin:10,
+    loop:true,
+
+    onInitialized: carouselInitialized
+
+});
+
+function carouselInitialized(event){
+    alert("Привет)
+});
+
+Можно делать прям в объкте owl
+
+
+owl.owlCarousel({
+    items:3,
+    margin:10,
+    loop:true,
+
+    onInitialized: function(){
+        alert("Привет")
+    }
+});
+
+
+
+
+
+
+
+
+
+
+

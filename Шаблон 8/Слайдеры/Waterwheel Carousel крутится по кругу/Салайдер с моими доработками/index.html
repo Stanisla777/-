@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google" value="notranslate">
+    <meta name="theme-color" content="#ffffff">
+    <title> </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="animated-slider-css.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="home">
+
+<nav class="media-menu">
+    <div class="media-logo"></div>
+
+    <div class="container">
+        <div class="gears"></div>
+        <div class="header-inner flex-space-between">
+            <div class="header-inner-left">
+                <div class="media-close"></div>
+            </div>
+            <div class="header-inner-center">
+                <h1 class="fontweight800 uppercase">Формула 1</h1>
+            </div>
+            <a href="#" class="header-inner-right">
+                <div style="background-image: url('#')" class="status-icon"></div>
+                <span class="nunber-actions nunber-actions-icon">3</span>
+            </a>
+        </div>
+    </div>
+    <div class="container-pad-0">
+
+
+        <ul class="wrapper-media-menu">
+
+            <li class="media-menu-item active-item">
+                <a href="#" class="menu-link">
+                    <span>Услуги</span>
+                </a>
+            </li>
+            <li class="media-menu-item">
+                <a href="#" class="menu-link">
+                    <span>Автосервисы</span>
+                </a>
+            </li>
+            <li class="media-menu-item ">
+                <a href="#" class="menu-link">
+                    <span>Мой профиль</span>
+                </a>
+            </li>
+            <li class="media-menu-item">
+                <a href="#" class="menu-link">
+                    <span>Мои заказы</span>
+                </a>
+            </li>
+
+        </ul>
+        <div class="media-logo"></div>
+    </div>
+</nav>
+
+
+
+<div class="wrap">
+
+
+
+<section class="cal-action-slider">
+    <div class="container">
+          <div class="choose_slider_items ggg">
+                <ul id="mySlider1">
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+                    </li>
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+                    </li>
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+
+                    </li>
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+
+                    </li>
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+
+                    </li>
+
+                    <li class="current_item">
+                        <div>
+                            <div class="wapper-img-slider"></div>
+                            <p class="your-name">YOUR NAME</p>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+              <!--Кнопки управления-->
+
+              <div id="btn_next1" class="slider-btn">
+                  <div class="btn_next1 arrow-btn"></div>
+              </div>
+              <div id="btn_prev1" class="slider-btn">
+                  <div class="btn_prev1 arrow-btn"></div>
+              </div>
+            </div>
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="">
+    <div class="container-pad-0">
+
+    </div>
+</section>
+
+
+<footer class="footer text-center">
+
+    <div class="container">
+
+    </div>
+</footer>
+
+</div>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="jquery.cssslider.js"></script>
+<script src="jquery.touchSwipe.js"></script>
+1<script>
+
+    $(document).ready(function(){
+
+
+//        слайдер карусель
+
+        $("#mySlider1").AnimatedSlider( {
+
+            prevButton: "#btn_prev1",
+            nextButton: "#btn_next1",
+            visibleItems: 3,
+            infiniteScroll: true,
+            willChangeCallback: function(obj, item) {//выполнение чего-либо при загрузке слайда
+//                middle_current_item()
+            },
+            changedCallback: function(obj, item) {//выполнение чего-либо при отработке слайда
+//                $('.current_item').css('left',0);
+            }
+        });
+
+
+//        Чтобы слайд можно былолистать мышкой, а не только нажатием на кнопки
+
+        $(".choose_slider_items").swipe({
+            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                $('#btn_next1').click();
+            }
+        });
+        $(".choose_slider_items").swipe({
+            swipeRight:function(event, direction, distance, duration, fingerCount) {
+                $('#btn_prev1').click();
+            }
+        });
+
+
+//        Так как все li у нас имеют position:absolute, задаем высоту общего контейнера
+
+        var current_item = $('.choose_slider_items li.current_item');
+        var height_current_item;
+
+        function height_slider() {
+            height_current_item = $(current_item).outerHeight();
+
+            $('#mySlider1').css({
+                'height':height_current_item +20+'px'
+            });
+        }
+
+        height_slider();
+
+    });
+</script>
+</body>
+
+</html>
