@@ -1576,11 +1576,11 @@ row-col-lg-mar-(5-30) - изменение отсупа в медиа запро
 /*Если нужны другие медиа, нужно учитывать какие отступы были*/
 /*одинаковые колонки*/
 @media screen and (max-width: 800px) {
-    [class*="row-"].my-class {
+    .my-class {
         margin-left: -10px;
         margin-right: -10px;
     }
-    [class*="row-"].my-class .col-flex {
+    .my-class .col-flex {
         width: calc(100%/2 - 10px*2);
         margin-left: 10px;
         margin-right: 10px;

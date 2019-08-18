@@ -1,0 +1,14 @@
+(function () {
+
+   $({numberValue: 0}).animate({numberValue: 20}, {
+      duration: 3000, // ѕродолжительность анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
+      easing: "linear",
+      step: function (val) {
+          $(".progressbar-count").html(Math.ceil(val) + ' %'); // Ѕлок, где необходимо сделать анимацию
+      }
+
+  });
+    
+
+
+});

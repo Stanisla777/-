@@ -1,0 +1,38 @@
+За основу шкалы я выбрал бутсираповскую прогрессбар. Потом можно разработать свою. Вот её html
+
+<div class="wrapper-progressbar">
+    <div data-width="30" style="width:30%;" class="progress">
+        <div class="progress-bar" role="progressbar" data-width="100"></div>
+    </div>
+</div>
+
+
+
+.progress-bar {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+.wrapper-progressbar {
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  max-width: 100%;
+}
+
+@keyframes zoomIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+Бутстраповсский прогрессбар я оборачиваю ещё в один контейнер, ширина у него будет 100%.
+Анимацию я делаю блоку с классом .progress-bar у которого ширина будет всегда плавно изменяться с 0 до 100%. А вот уже  блок progress, может принимать различную ширину относительно блока  .wrapper-progressbar
