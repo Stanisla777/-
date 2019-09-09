@@ -47,7 +47,12 @@ owl.owlCarousel({
     }
 });
 
+А еще бывает так, что если у отдельного слайда есть рама она может не помещаться. Тогда
 
+.wrapper-collections .owl-item {
+    padding-left: 1px;
+    padding-right: 1px;
+}
 
 
 
