@@ -1,0 +1,28 @@
+Самое просмтое добавление
+
+ymaps.ready(init);
+
+        function init () {
+            var myMap = new ymaps.Map("map", {
+                // Центр карты, указываем коордианты
+                center:[55.752161956105276,37.61949517968746],
+                // Масштаб, тут все просто
+                zoom: 9,
+                // Отключаем все элементы управления
+                controls: []
+            });
+            // Создание метки
+            var myPlacemark = new ymaps.Placemark([55.75,37.59], {
+                iconCaption: 'подсказка'
+            }, {
+                // preset: 'islands#pinkDotIcon'
+            });
+
+            // Добавление метки на карту
+            myMap.geoObjects.add(myPlacemark);
+        }
+
+
+Здесь разные возможности в том числе добавление по адресу
+https://snipp.ru/jquery/yamaps-balloon#link-metka-s-tekstom
+
